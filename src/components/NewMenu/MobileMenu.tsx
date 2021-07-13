@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import clsx from 'clsx'
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles'
@@ -92,11 +92,13 @@ const useStyles = makeStyles((theme: Theme) =>
 const LogoBanner = styled.img`
   max-height: 50px;
 `
+const Button = styled.button``
 
 export default function PersistentDrawerLeft() {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
+  const [addressMeta, setAddressMeta] = useState();
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -144,14 +146,47 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
+        <ListItem>
+          <Button className="metamask-button" >
+              <img
+                className="metamask-image"
+                src='/images/common/metamask.png'
+                style={{ height: "34px" }}
+                alt="metamask"
+              />
+            </Button>
+            {addressMeta === null  ? (
+              <>
+                <span className="red meta-address">
+                  {/* First 4 chars */}
+                  0x04
+                </span>
+                <span className=""> ... </span>
+                <span className="blue meta-address">
+                  {/* last 4 chars */}
+                  5678
+                </span>
+              </>
+            ) : (
+              <span className="orangered meta-address"> Connect Metamask </span>
+            )}
+          </ListItem>
           <ListItem button key="Presale">
             <a href="https://presale.kupcakeswap.finance">
               <ListItemText primary="Presale" />
             </a>
           </ListItem>
+          <ListItem button key="Dapp (soon)">
+            <ListItemText primary="Dapp (soon)" />
+          </ListItem>
           <ListItem button key="Documentation">
-            <a href="/">
+            <a href="https://docs.kupcakeswap.finance">
               <ListItemText primary="Documentation" />
+            </a>
+          </ListItem>
+          <ListItem button key="FAQ">
+            <a href="https://docs.kupcakeswap.finance/general-help/general-help-1/faq">
+              <ListItemText primary="FAQ" />
             </a>
           </ListItem>
           <ListItem button key="Token">
@@ -159,7 +194,6 @@ export default function PersistentDrawerLeft() {
               <ListItemText primary="Token Submission" />
             </a>
           </ListItem>
-
           <Divider />
 
           <ListItem button key="Telegram Ann.">

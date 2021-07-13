@@ -40,8 +40,14 @@ const SubTitle2 = styled(SubTitle)`
 `
 
 const Dark = styled.div`
-  background-color: #00c7c6;
+  background-color: #48cae4;
   padding: 20px 0;
+  padding-top: 100px;
+  border-bottom: 10px solid #fff;
+  width: 100%100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
 `
 
 const HeaderFarm = styled.div`
@@ -49,7 +55,7 @@ const HeaderFarm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #00c7c6;
+  background-color: #48cae4;
 `
 
 const HeaderPool = styled.div`
@@ -57,7 +63,7 @@ const HeaderPool = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #00c7c6;
+  background-color: #48cae4;
   background-position-x: center;
   background-position-y: bottom;
   background-repeat: no-repeat;
@@ -177,19 +183,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   return (
     <Page>
-      <HeaderZ>
-        <MainTitle as="h1" size="xl" mb="24px" mt="30px" color="tertiary">
-          {tokenMode ? TranslateString(100002, 'Pools.') : TranslateString(100002, 'Farms.')}
-        </MainTitle>
-        <SubTitle as="h3" size="md" mb="24px" mt="30px" color="tertiary">
-          {tokenMode
-            ? TranslateString(100002, 'Stake tokens. Earn SIMPLE.')
-            : TranslateString(100002, 'Stake LPs. Earn SIMPLE.')}
-        </SubTitle>
-        <SubTitle2 as="h3" size="md" mb="24px" mt="30px" color="tertiary">
-          Farming starts in 2d 3h 25min 30sec
-        </SubTitle2>
-      </HeaderZ>
+      
       <Dark>
         <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       </Dark>

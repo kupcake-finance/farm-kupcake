@@ -32,8 +32,8 @@ const MultiplierTag = styled(Tag)`
   background-color: transparent;
   margin: 1px solid #333 !important;
   color: #fff;
-  background-color: #00c7c6;
-  border-color: #00c7c6;
+  background-color: #48cae4;
+  border-color: #48cae4;
   display: flex;
   font-size: 18px;
   justify-content: flex-end;

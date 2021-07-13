@@ -6,9 +6,6 @@ import Menu, { MenuProps } from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import DraftsIcon from '@material-ui/icons/Drafts'
-import SendIcon from '@material-ui/icons/Send'
 import TelegramIcon from '@material-ui/icons/Telegram'
 
 const StyledMenu = withStyles({
@@ -92,6 +89,16 @@ export default function CustomizedMenus() {
           </StyledMenuItem>
         </a>
       </StyledMenu>
+      <a href="https://twitter.com/KupcakeSwap" target="_blank"  rel="noreferrer">
+      <StyledButton
+        aria-controls="customized-menu"
+        aria-haspopup="true"
+        variant="contained"
+        color="inherit"
+      >
+        <IconImage src="/images/common/twitter.svg" alt="Twitter" />
+      </StyledButton>
+      </a>
     </div>
   )
 }

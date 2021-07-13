@@ -1,1 +1,1 @@
-# 🧁 Kupcake Frontend
+# 🧁 KupcakeSwap Frontend

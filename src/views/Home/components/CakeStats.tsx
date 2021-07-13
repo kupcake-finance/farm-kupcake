@@ -9,18 +9,28 @@ import { getCakeAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
 import { useFarms, usePriceCakeBusd } from '../../../state/hooks'
 
-const StyledCakeStats = styled(Card)`
-  margin-left: auto;
-  margin-right: auto;
+const StyledCardBody = styled(CardBody)`
   width: 100%;
-  background-size: 625px 451px;
-  background-repeat: no-repeat;
-  background-image: url('/images/common/stats-bg.png');
-  background-position-x: center;
-  background-position-y: bottom;
-  padding-bottom: 520px;
-  background-color: #0c0c0c;
-  padding-top: 30px;
+`
+
+const StyledCakeStats = styled(Card)`
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.99);
+  border-radius: 30px;
+  margin-top: 0px;
+  box-shadow: 0px 5px 10px #9f9f9f;
+  border: 7px solid white;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -4px, 0px);
+  }
 `
 
 const Row = styled.div`
@@ -35,21 +45,30 @@ const CenterHeading = styled(Heading)`
 `
 
 const RightText = styled(Text)`
-  text-align: right;
+  text-align: left;
 `
 
 const RowContainer = styled.div`
   display: flex;
-  max-width: 25%;
   margin: 0 auto;
   justify-content: space-around;
+
+  ${({ theme }) => theme.mediaQueries.xs} {
+    width: 100%;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: 50%;
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    width: 33%;
+  }
 `
 
 const LabelContainer = styled.div`
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 
   & > * {
     margin-bottom: 10px;
@@ -61,6 +80,7 @@ const ValuesContainer = styled.div`
   margin-top: 15px;
   flex-direction: column;
   display: flex;
+  align-items: flex-end;
 
   & > * {
     margin-bottom: 10px;
@@ -75,8 +95,20 @@ const SmallHeading = styled(Heading)`
 `
 
 const BigHeading = styled(Heading)`
-  color: #fff !important;
+  font-family: 'M PLUS Rounded 1c', sans-serif !important;
+  font-weight: 800;
+  color: #48cae4 !important;
   font-size: 56px !important;
+
+  ${({ theme }) => theme.mediaQueries.xs} {
+  font-size: 42px !important;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+  font-size: 56px !important;
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+  font-size: 56px !important;
+  }
 `
 
 const MarginLink = styled.a`
@@ -105,57 +137,54 @@ const CakeStats = () => {
 
   return (
     <StyledCakeStats>
-      <CardBody>
+      <StyledCardBody>
         <Flex flexDirection="column" alignItems="center">
-          <SmallHeading size="md" mb="24px" color="#fff">
-            {TranslateString(999, 'SIMPLE STATS')}
-          </SmallHeading>
-          <BigHeading size="xl" mb="10px" color="#fff">
-            {TranslateString(999, 'Token Analytics')}
+          <BigHeading size="xl" mb="10px" color="#48cae4">
+            KUP ANALYTICS
           </BigHeading>
 
-          <MarginLink href="https://bscscan.com/token/0xf952fc3ca7325cc27d15885d37117676d25bfda6">
-            <Text color="textSubtle">{TranslateString(999, 'See on BSC Scan >')}</Text>
+          <MarginLink href="https://explorer.kcc.io/en/address/0x98a96f0db2185a9462c0cedd1a6259955fff7353">
+            <Text color="#ff629a">{TranslateString(999, 'See on KCC Explorer')}</Text>
           </MarginLink>
         </Flex>
         <RowContainer>
           <LabelContainer>
-            <RightText fontSize="25px" color="#06c">
+            <RightText fontSize="25px" color="#48cae4">
               {TranslateString(10005, 'Market Cap')}
             </RightText>
 
-            <Text fontSize="25px" color="#06c">
+            <Text fontSize="25px" color="#48cae4">
               {TranslateString(536, 'Total Minted')}
             </Text>
 
-            <Text fontSize="25px" color="#06c">
+            <Text fontSize="25px" color="#48cae4">
               {TranslateString(538, 'Total Burned')}
             </Text>
 
-            <Text fontSize="25px" color="#06c">
+            <Text fontSize="25px" color="#48cae4">
               {TranslateString(123546, 'Supply')}
             </Text>
 
-            <Text fontSize="25px" color="#06c">
+            <Text fontSize="25px" color="#48cae4">
               {TranslateString(123456, 'SIMPLE/block')}
             </Text>
           </LabelContainer>
 
           <ValuesContainer>
-            <CardValue fontSize="25px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" color="#fff" />
+            <CardValue fontSize="25px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" color="#ff629a" />
 
             {totalSupply && (
-              <CardValue fontSize="25px" value={getBalanceNumber(totalSupply)} decimals={0} color="#fff" />
+              <CardValue fontSize="25px" value={getBalanceNumber(totalSupply)} decimals={0} color="#ff629a" />
             )}
 
-            <CardValue fontSize="25px" value={getBalanceNumber(burnedBalance)} decimals={0} color="#fff" />
+            <CardValue fontSize="25px" value={getBalanceNumber(burnedBalance)} decimals={0} color="#ff629a" />
 
-            {cakeSupply && <CardValue fontSize="25px" value={cakeSupply} decimals={0} color="#fff" />}
+            {cakeSupply && <CardValue fontSize="25px" value={cakeSupply} decimals={0} color="#ff629a" />}
 
-            <CardValue fontSize="25px" value={nativePerBlock} decimals={0} color="#fff" />
+            <CardValue fontSize="25px" value={nativePerBlock} decimals={0} color="#ff629a" />
           </ValuesContainer>
         </RowContainer>
-      </CardBody>
+      </StyledCardBody>
     </StyledCakeStats>
   )
 }

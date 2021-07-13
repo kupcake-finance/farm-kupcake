@@ -8,7 +8,7 @@ import FarmStakingCard from './components/FarmStakingCard'
 import CakeStats from './components/CakeStats'
 import TotalValueLockedCard from './components/TotalValueLockedCard'
 import TwitterCard from './components/TwitterCard'
-
+import Hero from '../../components/NewMenu/Hero'
 import FlexLayout from '../../components/layout/Flex'
 import PoocoinCard from './components/PoocoinCard'
 import LPSwapCard from './components/LPSwapCard'
@@ -16,28 +16,7 @@ import MetamaskCard from './components/MetamaskCard'
 import PancakeCard from './components/PancakeCard'
 import ToolCard from './components/ToolCard'
 
-const Hero = styled.div`
-  align-items: center;
-  /* background-image: url('/images/banners/banner6.png'); */
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin: auto;
-  margin-bottom: 32px;
-  padding-top: 116px;
-  text-align: center;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
-    /* background-image: url('/images/banners/banner4.png'); */
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 30px;
-    height: 180px;
-    padding-top: 0;
-  }
-`
 const PinkSpan = styled.span`
   font-family: 'M PLUS Rounded 1c', sans-serif;
   color: #ff629a;
@@ -45,7 +24,7 @@ const PinkSpan = styled.span`
 
 const MainTitle = styled(Heading)`
   font-family: 'M PLUS Rounded 1c', sans-serif;
-  color: #00c7c6;
+  color: #48cae4;
   font-size: 65px;
   font-weight: 300;
 `
@@ -141,17 +120,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Hero>
-        <CardImage src="/images/common/token.png" alt="cake logo" />
-        {/* <HidingBlock /> */}
-        <Flex flexDirection="column">
-          <MainTitle as="h1" size="xl" mb="24px" mt="30px" color="tertiary">
-            <PinkSpan>Ku</PinkSpan>pcakeSwap
-          </MainTitle>
-          <SubTitle>The #1 AMM on Kucoin Community Chain</SubTitle>
-        </Flex>
-        <CardImage src="/images/common/token.png" alt="cake logo" />
-      </Hero>
+      <Hero />
 
       <Page>
         <div>

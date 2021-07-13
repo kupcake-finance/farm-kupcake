@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Flex, Heading } from '@pancakeswap-libs/uikit'
-import Menu from './components/Menu'
+import Menu from '../../components/NewMenu/Menu'
+import Hero from '../../components/NewMenu/Hero'
 import InfoContainer from './components/InfoContainer'
 import GlobalContent from './components/GlobalContent'
 import CardsContainer from './components/CardsContainer'
@@ -9,36 +10,6 @@ import CardsContainer from './components/CardsContainer'
 const PinkSpan = styled.span`
   font-family: 'M PLUS Rounded 1c', sans-serif;
   color: #ff629a;
-`
-
-const Hero = styled.div`
-  align-items: center;
-  /* background-image: url('/images/banners/banner6.png'); */
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin: auto;
-  margin-bottom: 60px;
-  text-align: center;
-  ${({ theme }) => theme.mediaQueries.xs} {
-    margin-bottom: 0px;
-    padding-top: 11px;
-  }
-  ${({ theme }) => theme.mediaQueries.md} {
-    margin-bottom: 0px;
-    padding-top: 11px;
-  }
-  ${({ theme }) => theme.mediaQueries.lg} {
-    /* background-image: url('/images/banners/banner4.png'); */
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 50px;
-    height: 180px;
-    padding-top: 116px;
-    /* padding-top: 116; */
-  }
 `
 
 const MainTitle = styled(Heading)`
@@ -150,15 +121,7 @@ const Landing: React.FC = () => {
     <>
       <Relative>
         <Container />
-        <Menu />
-        <Hero>
-          <Flex flexDirection="column">
-            <MainTitle as="h1" size="xl" mb="24px" mt="30px" color="tertiary">
-              <PinkSpan>Ku</PinkSpan>pcakeSwap
-            </MainTitle>
-            <SubTitle>The #1 AMM on Kucoin Community Chain</SubTitle>
-          </Flex>
-        </Hero>
+        <Hero />
 
         <InfoContainer />
         <WhiteSubTitle>AUTOMATED MARKET MAKER</WhiteSubTitle>

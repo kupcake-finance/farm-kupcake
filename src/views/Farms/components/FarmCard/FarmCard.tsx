@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 import styled, { keyframes } from 'styled-components'
 import { Tag, Flex, Text, Skeleton } from '@pancakeswap-libs/uikit'
 import { Farm } from 'state/types'
@@ -28,6 +29,18 @@ const AccentGradient = keyframes`
   100% {
     background-position: 50% 0%;
   }
+`
+const Background = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/common/chef-bg.png');
+  border-radius: 16px;
+  /* background-size: 10%; */
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  opacity: 0.5;
 `
 
 const StyledCardAccent = styled.div`
@@ -99,8 +112,8 @@ const MultiplierTag = styled(Tag)`
   background-color: transparent;
   margin: 1px solid #333 !important;
   color: #fff;
-  background-color: #00c7c6;
-  border-color: #00c7c6;
+  background-color: #48cae4;
+  border-color: #48cae4;
   display: flex;
   justify-content: flex-end;
 `
@@ -109,9 +122,17 @@ const Container = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1000px;
+  position: relative;
+`
+
+const CardContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
 `
 
 const NewCard = styled.div`
+  position: relative;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
@@ -121,13 +142,22 @@ const NewCard = styled.div`
   max-width: 1000px;
   height: 140px;
   /* background-color: #f2f2f2; */
-  background-color: #eff9fb;
+  background-color: #fff;
   /* border-radius: 20px; */
   padding: 5px 25px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   margin-left: auto;
   margin-right: auto;
   /* box-shadow: 0px 0px 1px black; */
+  box-shadow: 0px 2px 10px #9f9f9f;
+  border: 3px solid white;
+
+  &:hover {
+    border-color: #48cae4;
+    /* box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px; */
+    /* transform: translate3d(0px, -4px, 0px); */
+    cursor: pointer;
+  }
 `
 
 const CardImageBlock = styled.div`
@@ -139,7 +169,7 @@ const CardImageBlock = styled.div`
 `
 
 const APRText = styled.p`
-  color: #00c7c6 !important;
+  color: #48cae4 !important;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -152,7 +182,8 @@ const Relative = styled.div`
 
 const CardImage = styled.img`
   /* height: 120px; */
-  width: 115px;
+  height: 70px;
+  margin-bottom: 7px;
 `
 
 const HidingBlock = styled.div`
@@ -168,10 +199,10 @@ const HidingBlock = styled.div`
 const LPLabel = styled(Text)`
   color: #000;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   z-index: 1;
-  color: #00c7c6 !important;
-  text-shadow: 2px 2px 3px #d9c8be;
+  color: #48cae4 !important;
+  /* text-shadow: 2px 2px 3px #d9c8be; */
 `
 
 const VerticalDivider = styled.div`
@@ -206,9 +237,10 @@ const APRInfoElement = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: left;
-  align-items: left;
+  align-items: flex-start;
   /* border: 1px solid #ccc; */
   position: relative;
+  width: 20%;
   & > * {
     color: #000;
   }
@@ -222,6 +254,12 @@ const InfoKey = styled.p`
 const InfoValue = styled.p`
   font-weight: 500;
   font-size: 15px;
+`
+
+const Trigger = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `
 
 interface FarmCardProps {
@@ -281,49 +319,57 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   const { quoteTokenAdresses, quoteTokenSymbol, risk } = farm
 
   return (
-    <NewCard>
-      <CardImageBlock>
-        <Relative>
-          <CardImage src={`/images/farms/${farmImage}.png`} alt={quoteTokenSymbol} height={118} />
-          {/* <HidingBlock /> */}
-        </Relative>
-        <LPLabel>{lpLabel}</LPLabel>
-      </CardImageBlock>
+    <CardContainer>
+      <NewCard>
+        <Background />
+        <CardImageBlock>
+          <Relative>
+            <CardImage src={`/images/farms/${farmImage}.png`} alt={quoteTokenSymbol} height={88} />
+            {/* <HidingBlock /> */}
+          </Relative>
+          <LPLabel>{lpLabel}</LPLabel>
+        </CardImageBlock>
 
-      <APRInfoElement>
-        <InfoKey>Earned</InfoKey>
-        {/* ##NB_TOKEN## */}
-        <APRText>500 KUP</APRText>
-      </APRInfoElement>
+       
+        <APRInfoElement>
+          <InfoKey>Earned</InfoKey>
+          {/* ##NB_TOKEN## */}
+          <APRText>500 KUP</APRText>
+        </APRInfoElement>
 
-      <APRInfoElement>
-        <InfoKey>APR</InfoKey>
-        <APRText>
-          {farmAPY}%
-          {farm.apy ? (
-            <>
-              <ApyButton
-                lpLabel={lpLabel}
-                quoteTokenAdresses={quoteTokenAdresses}
-                quoteTokenSymbol={quoteTokenSymbol}
-                tokenAddresses={tokenAddresses}
-                cakePrice={cakePrice}
-                apy={farm.apy}
-              />
-            </>
-          ) : (
-            <Skeleton height={24} width={80} />
-          )}
-        </APRText>
-      </APRInfoElement>
+        <APRInfoElement>
+          <InfoKey>APR</InfoKey>
+          <APRText>
+            {farmAPY}%
+            {farm.apy ? (
+              <>
+                <ApyButton
+                  lpLabel={lpLabel}
+                  quoteTokenAdresses={quoteTokenAdresses}
+                  quoteTokenSymbol={quoteTokenSymbol}
+                  tokenAddresses={tokenAddresses}
+                  cakePrice={cakePrice}
+                  apy={farm.apy}
+                />
+              </>
+            ) : (
+              <Skeleton height={24} width={80} />
+            )}
+          </APRText>
+          
+        </APRInfoElement>
 
-      <APRInfoElement>
-        <InfoKey>Liquidity</InfoKey>
-        {/* ##LIQUIDITY_IN_POOL## */}
-        <APRText>$1,500,000</APRText>
-      </APRInfoElement>
+        <APRInfoElement>
+          <InfoKey>Liquidity</InfoKey>
+          {/* ##LIQUIDITY_IN_POOL## */}
+          <APRText>$1,500,000</APRText>
+        </APRInfoElement>
 
-      {/* <InfoContainer>
+        <APRInfoElement>
+        <InfoKey>Multiplier</InfoKey>
+          <APRText>3x</APRText>
+        </APRInfoElement>
+        {/* <InfoContainer>
         <InfoElement>
           <InfoKey>EARN</InfoKey>
           <InfoValue>{earnLabel}</InfoValue>
@@ -345,10 +391,11 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         </InfoElement>
       </InfoContainer> */}
 
-      {/* <Relative>
+        {/* <Relative>
         <HarvestAction earnings={earnings} pid={pid} nextHarvest={nextHarvest} />
       </Relative> */}
-    </NewCard>
+      </NewCard>
+    </CardContainer>
   )
 }
 

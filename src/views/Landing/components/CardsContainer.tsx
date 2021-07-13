@@ -4,7 +4,7 @@ import FlexLayout from 'components/layout/Flex'
 import Countdown, { zeroPad, calcTimeDelta, formatTimeDelta } from 'react-countdown'
 import { withStyles } from '@material-ui/core/styles'
 import { Button, Flex, Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
-import CustomizedMenus from './CustomizedMenus'
+import CustomizedMenus from '../../../components/NewMenu/CustomizedMenus'
 
 const PinkSpan = styled.span`
   font-family: 'M PLUS Rounded 1c', sans-serif;
