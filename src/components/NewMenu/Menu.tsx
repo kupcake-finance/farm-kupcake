@@ -133,7 +133,7 @@ const Background = styled.div`
 export default function Menu() {
   return (
     <>
-    <Background />
+      <Background />
       <MobileMenuContainer>
         <MobileMenu />
       </MobileMenuContainer>

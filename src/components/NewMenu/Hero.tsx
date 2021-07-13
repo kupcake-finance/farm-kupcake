@@ -78,12 +78,12 @@ const Hero = styled.div`
 export default function HeroBlock() {
   return (
     <Hero>
-          <Flex flexDirection="column">
-            <MainTitle as="h1" size="xl" mb="24px" mt="30px" color="tertiary">
-              <PinkSpan>Ku</PinkSpan>pcakeSwap
-            </MainTitle>
-            <SubTitle>The #1 AMM on Kucoin Community Chain</SubTitle>
-          </Flex>
-        </Hero>
+      <Flex flexDirection="column">
+        <MainTitle as="h1" size="xl" mb="24px" mt="30px" color="tertiary">
+          <PinkSpan>Ku</PinkSpan>pcakeSwap
+        </MainTitle>
+        <SubTitle>The #1 AMM on Kucoin Community Chain</SubTitle>
+      </Flex>
+    </Hero>
   )
 }

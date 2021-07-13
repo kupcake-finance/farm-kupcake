@@ -16,7 +16,6 @@ import MetamaskCard from './components/MetamaskCard'
 import PancakeCard from './components/PancakeCard'
 import ToolCard from './components/ToolCard'
 
-
 const PinkSpan = styled.span`
   font-family: 'M PLUS Rounded 1c', sans-serif;
   color: #ff629a;

@@ -398,12 +398,14 @@ const MaxButton = styled(Button)`
   box-shadow: none;
   padding: 18px;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     color: #ff629a;
     background-color: #fff;
-  border-color: #ff629a !important;
-  box-shadow: none !important;
-  font-weight: 600;
+    border-color: #ff629a !important;
+    box-shadow: none !important;
+    font-weight: 600;
   }
 `
 
@@ -576,7 +578,7 @@ const FarmDetails: React.FC = () => {
             <DepositWithdrawInput />
 
             {/* Replace by Token or LP name */}
-            <DepositWithdrawToken>__TOKEN__</DepositWithdrawToken>
+            <DepositWithdrawToken>__TOKEN_NAME__</DepositWithdrawToken>
 
             {/* Add max token amount based on wallet balance */}
             <MaxButton>MAX</MaxButton>
@@ -587,7 +589,7 @@ const FarmDetails: React.FC = () => {
             <DepositWidthdrawFees>__AMOUNT__ __TYPE__ fees</DepositWidthdrawFees>
 
             {/* Amount of token / LP currently owned bu user waller */}
-            <WalletBalance>WALLET BALANCE: __AMOUNT__ __TOKEN__</WalletBalance>
+            <WalletBalance>WALLET BALANCE: __AMOUNT__ __TOKEN_NAME__</WalletBalance>
           </WalletBalanceContainer>
         </DepositWithdrawContainer>
 
@@ -598,7 +600,7 @@ const FarmDetails: React.FC = () => {
             <div>YOUR BALANCE</div>
 
             {/* Balance has to be displayed in USD $ (Deposit + profits) */}
-            <Balance>$ 2525.00</Balance>
+            <Balance>$ __BALANCE__</Balance>
           </BalanceContainer>
           <ActionButtons>
             {/* Case 1 : need to switch to correct chain ID */}

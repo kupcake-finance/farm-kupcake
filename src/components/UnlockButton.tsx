@@ -5,58 +5,58 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
 
 const RobotoButton = styled(Button)`
-position: relative !important;
-font-family: 'Roboto', sans-serif;
-max-width: 45%;
-min-width: 200px;
-font-weight: 500;
-font-size: 22px;
-height: 70px;
-background-color: rgba(255, 255, 255, 0) !important;
-border: none;
-box-shadow: 0 0 10px #ff629a;
-border-radius: 60px;
-/* font-family: 'Gloria Hallelujah', cursive; */
-color: #48cae4;
-transition: all 0.5s ease;
-padding: 0 30px;
-
-${({ theme }) => theme.mediaQueries.xs} {
-  max-width: 85%;
-  padding: 0 10px;
-  margin: 10px auto;
-}
-${({ theme }) => theme.mediaQueries.md} {
+  position: relative !important;
+  font-family: 'Roboto', sans-serif;
   max-width: 45%;
-  margin: 10px auto;
-}
-${({ theme }) => theme.mediaQueries.lg} {
-  max-width: 45%;
-  margin: 10px auto;
-}
+  min-width: 200px;
+  font-weight: 500;
+  font-size: 22px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0) !important;
+  border: none;
+  box-shadow: 0 0 10px #ff629a;
+  border-radius: 60px;
+  /* font-family: 'Gloria Hallelujah', cursive; */
+  color: #48cae4;
+  transition: all 0.5s ease;
+  padding: 0 30px;
 
-& > img {
-  max-height: 40px;
-  margin: 0 5px;
-}
+  ${({ theme }) => theme.mediaQueries.xs} {
+    max-width: 85%;
+    padding: 0 10px;
+    margin: 10px auto;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    max-width: 45%;
+    margin: 10px auto;
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    max-width: 45%;
+    margin: 10px auto;
+  }
 
-transition: all 0.2s ease-in-out;
+  & > img {
+    max-height: 40px;
+    margin: 0 5px;
+  }
 
-&:hover,
-&:focus,
-&:visited {
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  border-color: transparent !important;
-  box-shadow: 0 8px 25px #ff629a !important;
-  transform: translate3d(0px, -3px, 0px);
-}
+  transition: all 0.2s ease-in-out;
 
-& > span {
-  font-family: 'Gloria Hallelujah', cursive;
-  margin-left: 6px;
-  font-weight: 600;
-  color: #ff629a;
-}
+  &:hover,
+  &:focus,
+  &:visited {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    border-color: transparent !important;
+    box-shadow: 0 8px 25px #ff629a !important;
+    transform: translate3d(0px, -3px, 0px);
+  }
+
+  & > span {
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-left: 6px;
+    font-weight: 600;
+    color: #ff629a;
+  }
 `
 
 const MetaRobotoButton = styled(RobotoButton)`

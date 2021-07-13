@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import clsx from 'clsx'
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles'
@@ -98,7 +98,7 @@ export default function PersistentDrawerLeft() {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
-  const [addressMeta, setAddressMeta] = useState();
+  const [addressMeta, setAddressMeta] = useState()
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -146,16 +146,16 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-        <ListItem>
-          <Button className="metamask-button" >
+          <ListItem>
+            <Button className="metamask-button">
               <img
                 className="metamask-image"
-                src='/images/common/metamask.png'
-                style={{ height: "34px" }}
+                src="/images/common/metamask.png"
+                style={{ height: '34px' }}
                 alt="metamask"
               />
             </Button>
-            {addressMeta === null  ? (
+            {addressMeta === null ? (
               <>
                 <span className="red meta-address">
                   {/* First 4 chars */}

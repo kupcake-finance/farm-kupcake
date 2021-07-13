@@ -101,13 +101,13 @@ const BigHeading = styled(Heading)`
   font-size: 56px !important;
 
   ${({ theme }) => theme.mediaQueries.xs} {
-  font-size: 42px !important;
+    font-size: 42px !important;
   }
   ${({ theme }) => theme.mediaQueries.md} {
-  font-size: 56px !important;
+    font-size: 56px !important;
   }
   ${({ theme }) => theme.mediaQueries.lg} {
-  font-size: 56px !important;
+    font-size: 56px !important;
   }
 `
 

@@ -63,7 +63,7 @@ const StyledCardValue = styled(CardValue)`
   display: flex !important;
   align-items: center !important;
   flex-direction: row !important;
-  justify-content: center !important; 
+  justify-content: center !important;
 `
 
 const MarginLink = styled.a`

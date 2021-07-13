@@ -78,7 +78,8 @@ const StyledHeading = styled(Heading)`
   font-weight: 800;
   font-size: 160px;
   color: #48cae4;
-  text-shadow: 10px 0 0 #fff, -10px 0 0 #fff, 0 10px 0 #fff, 0 -10px 0 #fff, 8px 8px #fff, -8px -8px 0 #fff, 8px -8px 0 #fff, -8px 8px 0 #fff;
+  text-shadow: 10px 0 0 #fff, -10px 0 0 #fff, 0 10px 0 #fff, 0 -10px 0 #fff, 8px 8px #fff, -8px -8px 0 #fff,
+    8px -8px 0 #fff, -8px 8px 0 #fff;
 
   & > span {
     color: #ff629a;
@@ -92,8 +93,10 @@ const NotFound = () => {
     <StyledPage>
       <StyledNotFound>
         <LogoIcon width="328px" mb="-80px" />
-        <StyledHeading size="xxl">4<span>0</span>4</StyledHeading>
-        <RobotoButton href="/" >
+        <StyledHeading size="xxl">
+          4<span>0</span>4
+        </StyledHeading>
+        <RobotoButton href="/">
           Back <span>Home</span>
         </RobotoButton>
       </StyledNotFound>

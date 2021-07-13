@@ -89,15 +89,10 @@ export default function CustomizedMenus() {
           </StyledMenuItem>
         </a>
       </StyledMenu>
-      <a href="https://twitter.com/KupcakeSwap" target="_blank"  rel="noreferrer">
-      <StyledButton
-        aria-controls="customized-menu"
-        aria-haspopup="true"
-        variant="contained"
-        color="inherit"
-      >
-        <IconImage src="/images/common/twitter.svg" alt="Twitter" />
-      </StyledButton>
+      <a href="https://twitter.com/KupcakeSwap" target="_blank" rel="noreferrer">
+        <StyledButton aria-controls="customized-menu" aria-haspopup="true" variant="contained" color="inherit">
+          <IconImage src="/images/common/twitter.svg" alt="Twitter" />
+        </StyledButton>
       </a>
     </div>
   )

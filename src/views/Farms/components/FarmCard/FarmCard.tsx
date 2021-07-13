@@ -330,7 +330,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
           <LPLabel>{lpLabel}</LPLabel>
         </CardImageBlock>
 
-       
         <APRInfoElement>
           <InfoKey>Earned</InfoKey>
           {/* ##NB_TOKEN## */}
@@ -356,7 +355,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
               <Skeleton height={24} width={80} />
             )}
           </APRText>
-          
         </APRInfoElement>
 
         <APRInfoElement>
@@ -366,7 +364,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         </APRInfoElement>
 
         <APRInfoElement>
-        <InfoKey>Multiplier</InfoKey>
+          <InfoKey>Multiplier</InfoKey>
           <APRText>3x</APRText>
         </APRInfoElement>
         {/* <InfoContainer>
