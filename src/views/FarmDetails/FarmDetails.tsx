@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { Farm } from 'state/types'
+import BigNumber from 'bignumber.js'
+import { provider } from 'web3-core'
+
 import { Card, Flex, Heading, Button } from '@pancakeswap-libs/uikit'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 import { Divider } from '@material-ui/core'
 import AlarmOnIcon from '@material-ui/icons/AlarmOn'
+
+export interface FarmWithStakedValue extends Farm {
+  apy?: BigNumber
+}
 
 const PinkSpan = styled.span`
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -467,7 +475,16 @@ const DepositButton = styled(SwitchButton)``
 const WithdrawButton = styled(SwitchButton)``
 const WithdrawExitButton = styled(SwitchButton)``
 
-const FarmDetails: React.FC = () => {
+interface FarmCardProps {
+  farm: FarmWithStakedValue
+  removed: boolean
+  cakePrice?: BigNumber
+  bnbPrice?: BigNumber
+  ethereum?: provider
+  account?: string
+}
+
+const FarmDetails: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice, ethereum, account }) => {
   return (
     <Container>
       <StyledDetailsCard>

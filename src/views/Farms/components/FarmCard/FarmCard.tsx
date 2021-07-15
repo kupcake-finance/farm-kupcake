@@ -5,6 +5,7 @@ import styled, { keyframes } from 'styled-components'
 import { Tag, Flex, Text, Skeleton } from '@pancakeswap-libs/uikit'
 import { Farm } from 'state/types'
 import { provider } from 'web3-core'
+import FarmDetails from 'views/FarmDetails'
 import useI18n from 'hooks/useI18n'
 import { useFarmFromPid, useFarmUser } from 'state/hooks'
 import ExpandableSectionButton from 'components/ExpandableSectionButton'
@@ -393,6 +394,15 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         <HarvestAction earnings={earnings} pid={pid} nextHarvest={nextHarvest} />
       </Relative> */}
       </NewCard>
+      <FarmDetails
+          key={farm.pid}
+          farm={farm}
+          removed={removed}
+          bnbPrice={bnbPrice}
+          cakePrice={cakePrice}
+          ethereum={ethereum}
+          account={account}
+        />
     </CardContainer>
   )
 }
