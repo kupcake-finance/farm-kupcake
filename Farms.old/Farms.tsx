@@ -21,27 +21,87 @@ import Divider from './components/Divider'
 export interface FarmsProps {
   tokenMode?: boolean
 }
+const MainTitle = styled(Heading)`
+  color: #fff;
+  font-size: 60px;
+  font-weight: 500;
+`
 
-const Hero = styled.div`
-  align-items: center;
-  background-color: #243b52;
+const SubTitle = styled(MainTitle)`
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: -15px;
+`
+
+const SubTitle2 = styled(SubTitle)`
+  margin-top: 30px;
+  color: #86868b;
+`
+
+const Dark = styled.div`
+  background-color: #48cae4;
+  padding: 20px 0;
+  padding-top: 100px;
+  border-bottom: 10px solid #fff;
+  width: 100%100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+`
+
+const HeaderFarm = styled.div`
+  margin-top: 5px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  margin: auto;
-  margin-bottom: 32px;
-  padding-top: 116px;
-  text-align: center;
+  align-items: center;
+  background-color: #48cae4;
+`
+
+const HeaderPool = styled.div`
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #48cae4;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: 800px;
+  padding-bottom: 350px;
+`
+
+const CardsContainer = styled.div`
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`
+
+const RestrictedFlexLayout = styled(FlexLayout)`
+  max-width: 1300px;
+  margin: 0 auto;
+
+  ${({ theme }) => theme.mediaQueries.xs} {
+    & > * {
+      max-width: 100%;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & > * {
+      min-width: 300px;
+      max-width: 45%;
+      width: 100%;
+    }
+  }
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-color: #243b52;
-    margin-bottom: 30px;
-    height: 180px;
-    padding-top: 50px;
+    & > * {
+      min-width: 280px;
+      max-width: 31.5%;
+      width: 100%;
+    }
   }
-`
-const MainTitle = styled(Heading)`
-  color: #d8a727;
 `
 
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
@@ -63,19 +123,25 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   const [stakedOnly, setStakedOnly] = useState(false)
 
-  const activeFarms = farmsLP.filter((farm) => !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X')
-  const inactiveFarms = farmsLP.filter((farm) => !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '0X')
+  const activeFarms = farmsLP.filter((farm) => farm.multiplier !== '0X')
+  const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
 
   const stakedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
   )
+  const HeaderZ = ({ children }) => {
+    if (tokenMode) {
+      return <HeaderPool>{children}</HeaderPool>
+    }
 
+    return <HeaderFarm>{children}</HeaderFarm>
+  }
   // /!\ This function will be removed soon
   // This function compute the APY for each farm and will be replaced when we have a reliable API
   // to retrieve assets prices against USD
   const farmsList = useCallback(
     (farmsToDisplay, removed: boolean) => {
-      // const cakePriceVsBNB = new BigNumber(farmsLP.find((farm) => farm.pid === CAKE_POOL_PID)?.tokenPriceVsQuote || 0)
+      // const cakePriceVsKCS = new BigNumber(farmsLP.find((farm) => farm.pid === CAKE_POOL_PID)?.tokenPriceVsQuote || 0)
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
@@ -89,7 +155,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
         let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0)
 
-        if (farm.quoteTokenSymbol === QuoteToken.BNB) {
+        if (farm.quoteTokenSymbol === QuoteToken.KCS) {
           totalValue = totalValue.times(bnbPrice)
         }
 
@@ -116,29 +182,22 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   )
 
   return (
-    <>
-      <Hero>
-        <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-          {tokenMode
-            ? TranslateString(10002, 'Stake tokens to earn ELEPHANT')
-            : TranslateString(320, 'Stake LP tokens to earn ELEPHANT')}
-        </Heading>
-      </Hero>
-      <Page>
+    <Page>
+      <Dark>
         <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
-        <div>
-          <Divider />
-          <FlexLayout>
-            <Route exact path={`${path}`}>
-              {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
-            </Route>
-            <Route exact path={`${path}/history`}>
-              {farmsList(inactiveFarms, true)}
-            </Route>
-          </FlexLayout>
-        </div>
-      </Page>
-    </>
+      </Dark>
+      <div>
+        <Divider />
+        <CardsContainer>
+          <Route exact path={`${path}`}>
+            {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
+          </Route>
+          <Route exact path={`${path}/history`}>
+            {farmsList(inactiveFarms, true)}
+          </Route>
+        </CardsContainer>
+      </div>
+    </Page>
   )
 }
 

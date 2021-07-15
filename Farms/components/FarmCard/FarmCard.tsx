@@ -117,17 +117,17 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
     : '-'
 
   const lpLabel = farm.lpSymbol
-  const earnLabel = 'CNR'
+  const earnLabel = 'EGG'
   const farmAPY = farm.apy && farm.apy.times(new BigNumber(100)).toNumber().toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })
 
   const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk } = farm
-  
+
   return (
     <FCard>
-      {farm.tokenSymbol === 'CNR' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'EGG' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -163,12 +163,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         <Text bold>{earnLabel}</Text>
       </Flex>
       <Flex justifyContent='space-between'>
-        <Text style={{ fontSize: '16px' }}>{TranslateString(10001, 'Deposit Fee')}:</Text>
-        <Text bold style={{ fontSize: '16px' }}>{(farm.depositFeeBP / 100)}%</Text>
-      </Flex>
-      <Flex justifyContent='space-between'>
-        <Text style={{ fontSize: '16px' }}>{TranslateString(10008, 'Harvest Lockup')}:</Text>
-        <Text bold style={{ fontSize: '16px' }}>{(farm.harvestInterval / 3600)} Hour(s)</Text>
+        <Text style={{ fontSize: '24px' }}>{TranslateString(10001, 'Deposit Fee')}:</Text>
+        <Text bold style={{ fontSize: '24px' }}>{(farm.depositFeeBP / 100)}%</Text>
       </Flex>
       <CardActionsContainer farm={farm} ethereum={ethereum} account={account} />
       <Divider />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import BigNumber from 'bignumber.js'
 import { Button, Flex, Heading } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
@@ -17,7 +17,7 @@ const BalanceAndCompound = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row;
 `
 
 const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid, nextHarvest }) => {
@@ -25,7 +25,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid, nextHarv
   const [pendingTx, setPendingTx] = useState(false)
   const { onReward } = useHarvest(pid)
   const { onStake } = useStake(pid)
-  const [ canHarvest, setCanHarvest ] = useState(false)
+  const [canHarvest, setCanHarvest] = useState(false)
 
   const rawEarningsBalance = getBalanceNumber(earnings)
   const displayBalance = rawEarningsBalance.toLocaleString()
@@ -36,34 +36,52 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid, nextHarv
   }, [nextHarvest])
 
   return (
-    <Flex mb='8px' justifyContent='space-between' alignItems='center'>
+    <Flex mt="10px" justifyContent="space-between" alignItems="center" flexDirection="column">
       <Heading color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>{displayBalance}</Heading>
       <BalanceAndCompound>
-        {pid === 11 ?
+        {pid === 0 || pid === 1 ? (
+          <>
+            <Button
+              disabled={rawEarningsBalance === 0 || pendingTx || !canHarvest}
+              size="sm"
+              variant="secondary"
+              marginBottom="15px"
+              marginTop="15px"
+              onClick={async () => {
+                setPendingTx(true)
+                await onStake(rawEarningsBalance.toString())
+                setPendingTx(false)
+              }}
+            >
+              {TranslateString(999, 'Compound')}
+            </Button>
+            <Button
+              size="sm"
+              variant="secondary"
+              marginBottom="15px"
+              marginTop="15px"
+              disabled={rawEarningsBalance === 0 || pendingTx || !canHarvest}
+              onClick={async () => {
+                setPendingTx(true)
+                await onReward()
+                setPendingTx(false)
+              }}
+            >
+              {TranslateString(999, 'Harvest')}
+            </Button>
+          </>
+        ) : (
           <Button
             disabled={rawEarningsBalance === 0 || pendingTx || !canHarvest}
-            size='sm'
-            variant='secondary'
-            marginBottom='15px'
             onClick={async () => {
               setPendingTx(true)
-              await onStake(rawEarningsBalance.toString())
+              await onReward()
               setPendingTx(false)
             }}
           >
-            {TranslateString(999, 'Compound')}
+            {TranslateString(999, 'Harvest')}
           </Button>
-          : null}
-        <Button
-          disabled={rawEarningsBalance === 0 || pendingTx || !canHarvest}
-          onClick={async () => {
-            setPendingTx(true)
-            await onReward()
-            setPendingTx(false)
-          }}
-        >
-          {TranslateString(999, 'Harvest')}
-        </Button>
+        )}
       </BalanceAndCompound>
     </Flex>
   )
