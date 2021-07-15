@@ -45,7 +45,7 @@ const Referral: React.FC = () => {
         <StyledCard>
           <CardHeader>
             <StyledHeading size="md">
-              SHARE THE SIMPLE&apos;S WIDSOM... <br /> <br /> ...and earn 5% of your friends income <br /> FOR LIFE!
+              SHARE THE KUP&apos;S WIDSOM... <br /> <br /> ...and earn 5% of your friends income <br /> FOR LIFE!
             </StyledHeading>
           </CardHeader>
           <CardBody>

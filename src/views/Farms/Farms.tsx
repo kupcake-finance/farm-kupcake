@@ -141,7 +141,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   // to retrieve assets prices against USD
   const farmsList = useCallback(
     (farmsToDisplay, removed: boolean) => {
-      // const cakePriceVsBNB = new BigNumber(farmsLP.find((farm) => farm.pid === CAKE_POOL_PID)?.tokenPriceVsQuote || 0)
+      // const cakePriceVsKCS = new BigNumber(farmsLP.find((farm) => farm.pid === CAKE_POOL_PID)?.tokenPriceVsQuote || 0)
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
@@ -155,7 +155,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
         let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0)
 
-        if (farm.quoteTokenSymbol === QuoteToken.BNB) {
+        if (farm.quoteTokenSymbol === QuoteToken.KCS) {
           totalValue = totalValue.times(bnbPrice)
         }
 

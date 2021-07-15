@@ -1,18 +1,25 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import { withStyles } from '@material-ui/core/styles'
 import { Button, Flex, Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
 import CustomizedMenus from './CustomizedMenus'
+import DocsMenu from './DocsMenu'
 import MobileMenu from './MobileMenu'
+// import MetamaskMenu from './MetamaskMenu'
+
+import LANDING from '../../../public/images/common/landing-bg-shady.png'
+// import FARMS from '../../../public/images/common/landing-bg-shady.png'
 
 const MenuContainer = styled.div`
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 65px;
   background: white;
   box-shadow: 0 0 10px #3c3c3c;
+  padding: 25px;
 
   ${({ theme }) => theme.mediaQueries.xs} {
     display: none;
@@ -118,12 +125,17 @@ const RobotoButton = styled(Button)`
   }
 `
 
+const LinksContainer = styled(Flex)`
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+`
 const Background = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   min-height: 1400px;
-  background-image: url('/images/common/landing-bg-shady.png');
+  background-image: url('/images/common/farms-bg-shady.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -131,9 +143,16 @@ const Background = styled.div`
 `
 
 export default function Menu() {
+  const location = useLocation()
+
+  const setPathName = () => {
+    const shortname = location.pathname.substring(0, 6)
+
+    return shortname === '/farms' ? '/images/common/farms-bg-shady.png' : '/images/common/landing-bg-shady.png'
+  }
   return (
     <>
-      <Background />
+      <Background style={{ backgroundImage: `url(${setPathName()})` }} />
       <MobileMenuContainer>
         <MobileMenu />
       </MobileMenuContainer>
@@ -143,26 +162,23 @@ export default function Menu() {
             <img src="/images/common/logo-ku.png" alt="logo" />
           </a>
         </>
-        <Flex justify-items="space-around">
-          <StyledA href="https://presale.kupcakeswap.finance/">Presale</StyledA>
-          <StyledA href="/swap">Swap</StyledA>
-          <StyledA href="/farms">Farms</StyledA>
-          <StyledElement>
-            <StyledA href="https://docs.kupcakeswap.finance/roadmap" target="_blank" rel="noreferrer">
-              Roadmap
-            </StyledA>
-          </StyledElement>
-          <StyledA href="https://docs.kupcakeswap.finance" target="_blank" rel="noreferrer">
-            Documentation
+        <LinksContainer>
+          <StyledA href="/">
+            Presale<span>(soon)</span>
           </StyledA>
-        </Flex>
+          {/* <StyledA href="/swap">Swap</StyledA> */}
+          {/* <StyledA href="/liquidity">Liquidity</StyledA> */}
+          {/* <StyledA href="/farms">Farms</StyledA> */}
+          <DocsMenu />
+          <CustomizedMenus />
+        </LinksContainer>
 
-        <Flex justify-items="space-between">
+        <Flex justify-items="space-between" alignItems="center">
+          {/* <MetamaskMenu /> */}
           <RobotoButton>
             <SmallImage src="/images/common/logo.png" alt="token" />
-            $10.50
+            $00,00
           </RobotoButton>
-          <CustomizedMenus />
         </Flex>
       </MenuContainer>
     </>

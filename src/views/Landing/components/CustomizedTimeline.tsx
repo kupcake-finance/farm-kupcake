@@ -118,6 +118,7 @@ export default function CustomizedTimeline() {
                 <StyledLi>Farming starts</StyledLi>
                 <StyledLi>Initial Liquidity Offer opens for submissions</StyledLi>
                 <StyledLi>Partnerships with other DApps</StyledLi>
+                <StyledLi>Turn Swap into ZAP</StyledLi>
               </ul>
             </Typography>
           </StyledPaper>

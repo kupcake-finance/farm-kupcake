@@ -108,14 +108,6 @@ const StyledCards = styled(FlexLayout)`
 
 const Home: React.FC = () => {
   const TranslateString = useI18n()
-  // const cookies = new Cookies()
-  // const [ref, setNum] = useQueryParam('ref', StringParam)
-
-  // if (ref) {
-  //   if (isAddress(rot13(ref))) {
-  //     cookies.set('ref', ref)
-  //   }
-  // }
 
   return (
     <>

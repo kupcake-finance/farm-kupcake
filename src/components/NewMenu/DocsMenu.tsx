@@ -6,8 +6,9 @@ import Menu, { MenuProps } from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import TelegramIcon from '@material-ui/icons/Telegram'
-import TwitterIcon from '@material-ui/icons/Twitter'
+import DescriptionIcon from '@material-ui/icons/Description'
+import TimelineIcon from '@material-ui/icons/Timeline'
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
 
 const StyledMenu = withStyles({
   paper: {
@@ -77,33 +78,33 @@ export default function CustomizedMenus() {
         color="inherit"
         onClick={handleClick}
       >
-        Follow Us
+        Docs
       </StyledButton>
       <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-        <a href="https://twitter.com/KupcakeSwap" target="_blank" rel="noreferrer">
+        <a href="https://docs.kupcakeswap.finance/" target="_blank" rel="noreferrer">
           <StyledMenuItem>
             <ListItemIcon>
-              <TwitterIcon fontSize="small" />
+              <DescriptionIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary="Twitter" />
+            <ListItemText primary="Project Documentation" />
           </StyledMenuItem>
         </a>
 
-        <a href="https://t.me/KupcakeSwap" target="_blank" rel="noreferrer">
+        <a href="https://docs.kupcakeswap.finance/roadmap" target="_blank" rel="noreferrer">
           <StyledMenuItem>
             <ListItemIcon>
-              <TelegramIcon fontSize="small" />
+              <TimelineIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary="TG English" />
+            <ListItemText primary="Roadmap" />
           </StyledMenuItem>
         </a>
 
-        <a href="https://t.me/KupcakeSwap_ann" target="_blank" rel="noreferrer">
+        <a href="https://docs.kupcakeswap.finance/how-to-buy" target="_blank" rel="noreferrer">
           <StyledMenuItem>
             <ListItemIcon>
-              <TelegramIcon fontSize="small" />
+              <HelpOutlineIcon fontSize="small" />
             </ListItemIcon>
-            <ListItemText primary="TG Announcements" />
+            <ListItemText primary="How to buy ?" />
           </StyledMenuItem>
         </a>
       </StyledMenu>

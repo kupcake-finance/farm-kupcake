@@ -30,7 +30,8 @@ const StyledMenu = withStyles({
 ))
 
 const IconImage = styled.img`
-  width: 24px;
+  width: 32px;
+  margin-right: 5px;
 `
 const StyledButton = styled(Button)`
   font-family: 'Roboto', sans-serif !important;
@@ -39,10 +40,11 @@ const StyledButton = styled(Button)`
   text-transform: none !important;
   background-color: transparent !important;
   box-shadow: none !important;
-  height: 25px !important;
+  height: 32px !important;
   /* width: 30px !important; */
   padding: 0px !important;
   margin-left: 10px !important;
+  margin-right: 20px !important;
 `
 
 const StyledMenuItem = withStyles((theme) => ({
@@ -60,8 +62,8 @@ const StyledMenuItem = withStyles((theme) => ({
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
+  const connectMetamask = () => {
+    setAnchorEl(null)
   }
 
   const handleClose = () => {
@@ -75,38 +77,11 @@ export default function CustomizedMenus() {
         aria-haspopup="true"
         variant="contained"
         color="inherit"
-        onClick={handleClick}
+        onClick={connectMetamask}
       >
-        Follow Us
+        <IconImage src="/images/common/metamask.png" alt="metamask" />
+        CONNECT
       </StyledButton>
-      <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-        <a href="https://twitter.com/KupcakeSwap" target="_blank" rel="noreferrer">
-          <StyledMenuItem>
-            <ListItemIcon>
-              <TwitterIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText primary="Twitter" />
-          </StyledMenuItem>
-        </a>
-
-        <a href="https://t.me/KupcakeSwap" target="_blank" rel="noreferrer">
-          <StyledMenuItem>
-            <ListItemIcon>
-              <TelegramIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText primary="TG English" />
-          </StyledMenuItem>
-        </a>
-
-        <a href="https://t.me/KupcakeSwap_ann" target="_blank" rel="noreferrer">
-          <StyledMenuItem>
-            <ListItemIcon>
-              <TelegramIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText primary="TG Announcements" />
-          </StyledMenuItem>
-        </a>
-      </StyledMenu>
     </div>
   )
 }

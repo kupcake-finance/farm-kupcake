@@ -74,7 +74,7 @@
         {
             "data": {
                 "stringId": 304,
-                "text": "Total SIMPLE burned since launch"
+                "text": "Total KUP burned since launch"
             }
         },
         {
@@ -122,13 +122,13 @@
         {
             "data": {
                 "stringId": 320,
-                "text": "Stake LP tokens to earn SIMPLE"
+                "text": "Stake LP tokens to earn KUP"
             }
         },
         {
             "data": {
                 "stringId": 322,
-                "text": "Stake SIMPLE, get SYRUP."
+                "text": "Stake KUP, get SYRUP."
             }
         },
         {
@@ -152,7 +152,7 @@
         {
             "data": {
                 "stringId": 334,
-                "text": "Every time you stake and unstake SIMPLE tokens, the contract will automatically harvest SIMPLE rewards for you!"
+                "text": "Every time you stake and unstake KUP tokens, the contract will automatically harvest KUP rewards for you!"
             }
         },
         {
@@ -218,7 +218,7 @@
         {
             "data": {
                 "stringId": 358,
-                "text": "SIMPLE price"
+                "text": "KUP price"
             }
         },
         {
@@ -242,7 +242,7 @@
         {
             "data": {
                 "stringId": 380,
-                "text": "1 SIMPLE = 1 SYRUP"
+                "text": "1 KUP = 1 SYRUP"
             }
         },
         {
@@ -290,7 +290,7 @@
         {
             "data": {
                 "stringId": 400,
-                "text": "SYRUP holders proportionally split 25% of SIMPLE block emissions each day (10 SIMPLE per block), Rewards are distributed each block."
+                "text": "SYRUP holders proportionally split 25% of KUP block emissions each day (10 KUP per block), Rewards are distributed each block."
             }
         },
         {
@@ -350,13 +350,13 @@
         {
             "data": {
                 "stringId": 424,
-                "text": "%num% SIMPLE"
+                "text": "%num% KUP"
             }
         },
         {
             "data": {
                 "stringId": 426,
-                "text": "Spend SIMPLE to buy tickets, contributing to the lottery pot. Ticket purchases end approx. 30 minutes before lottery. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers and their positions! Good luck!"
+                "text": "Spend KUP to buy tickets, contributing to the lottery pot. Ticket purchases end approx. 30 minutes before lottery. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers and their positions! Good luck!"
             }
         },
         {
@@ -434,19 +434,19 @@
         {
             "data": {
                 "stringId": 454,
-                "text": "%num% SIMPLE Available"
+                "text": "%num% KUP Available"
             }
         },
         {
             "data": {
                 "stringId": 456,
-                "text": "Your amount must be a multiple of 10 SIMPLE"
+                "text": "Your amount must be a multiple of 10 KUP"
             }
         },
         {
             "data": {
                 "stringId": 458,
-                "text": "1 Ticket = 10 SIMPLE"
+                "text": "1 Ticket = 10 KUP"
             }
         },
         {
@@ -494,7 +494,7 @@
         {
             "data": {
                 "stringId": 478,
-                "text": "Ticket purchases are final. Your SIMPLE cannot be returned to you after buying tickets."
+                "text": "Ticket purchases are final. Your KUP cannot be returned to you after buying tickets."
             }
         },
         {
@@ -506,7 +506,7 @@
         {
             "data": {
                 "stringId": 482,
-                "text": "SIMPLE prizes to be claimed"
+                "text": "KUP prizes to be claimed"
             }
         },
         {
@@ -542,13 +542,13 @@
         {
             "data": {
                 "stringId": 494,
-                "text": "Approve SIMPLE"
+                "text": "Approve KUP"
             }
         },
         {
             "data": {
                 "stringId": 496,
-                "text": "SYRUP holders proportionally split 40% of SIMPLE block emissions each day (10 SIMPLE per block), Rewards are distributed each block."
+                "text": "SYRUP holders proportionally split 40% of KUP block emissions each day (10 KUP per block), Rewards are distributed each block."
             }
         },
         {
@@ -566,19 +566,19 @@
         {
             "data": {
                 "stringId": 504,
-                "text": "You\u2019ll pay for the new tokens using SIMPLE-BNB LP tokens, which means you need to stake equal amounts of SIMPLE and BNB in a liquidity pool to take part."
+                "text": "You\u2019ll pay for the new tokens using KUP-KCS LP tokens, which means you need to stake equal amounts of KUP and KCS in a liquidity pool to take part."
             }
         },
         {
             "data": {
                 "stringId": 506,
-                "text": "Get SIMPLE-BNB LP >"
+                "text": "Get KUP-KCS LP >"
             }
         },
         {
             "data": {
                 "stringId": 508,
-                "text": "The project gets the BNB, Goose Finance burns the SIMPLE."
+                "text": "The project gets the KCS, Goose Finance burns the KUP."
             }
         },
         {
@@ -644,7 +644,7 @@
         {
             "data": {
                 "stringId": 534,
-                "text": "SIMPLE Stats"
+                "text": "KUP Stats"
             }
         },
         {
@@ -662,7 +662,7 @@
         {
             "data": {
                 "stringId": 540,
-                "text": "New SIMPLE\/block"
+                "text": "New KUP\/block"
             }
         },
         {
@@ -674,19 +674,19 @@
         {
             "data": {
                 "stringId": 544,
-                "text": "SIMPLE to Harvest"
+                "text": "KUP to Harvest"
             }
         },
         {
             "data": {
                 "stringId": 546,
-                "text": "SIMPLE in Wallet"
+                "text": "KUP in Wallet"
             }
         },
         {
             "data": {
                 "stringId": 548,
-                "text": "Collecting SIMPLE"
+                "text": "Collecting KUP"
             }
         },
         {
@@ -698,7 +698,7 @@
         {
             "data": {
                 "stringId": 552,
-                "text": "SIMPLE to Collect"
+                "text": "KUP to Collect"
             }
         },
         {
@@ -764,7 +764,7 @@
         {
             "data": {
                 "stringId": 580,
-                "text": "Stake SIMPLE to earn new tokens."
+                "text": "Stake KUP to earn new tokens."
             }
         },
         {
@@ -782,7 +782,7 @@
         {
             "data": {
                 "stringId": 586,
-                "text": "SIMPLE to burn (USD)"
+                "text": "KUP to burn (USD)"
             }
         },
         {
@@ -794,7 +794,7 @@
         {
             "data": {
                 "stringId": 590,
-                "text": "\u2b50\ufe0f Every time you stake and unstake LP tokens, the contract will automatically harvest SIMPLE rewards for you!"
+                "text": "\u2b50\ufe0f Every time you stake and unstake LP tokens, the contract will automatically harvest KUP rewards for you!"
             }
         },
         {
@@ -812,13 +812,13 @@
         {
             "data": {
                 "stringId": 596,
-                "text": "Buy SIMPLE and BNB tokens"
+                "text": "Buy KUP and KCS tokens"
             }
         },
         {
             "data": {
                 "stringId": 598,
-                "text": "Get SIMPLE-BNB LP tokens by adding SIMPLE and BNB liquidity"
+                "text": "Get KUP-KCS LP tokens by adding KUP and KCS liquidity"
             }
         },
         {
@@ -830,7 +830,7 @@
         {
             "data": {
                 "stringId": 602,
-                "text": "While the sale is live, commit your SIMPLE-LP tokens to buy the IFO tokens"
+                "text": "While the sale is live, commit your KUP-LP tokens to buy the IFO tokens"
             }
         },
         {
@@ -866,7 +866,7 @@
         {
             "data": {
                 "stringId": 614,
-                "text": "Trade in for SIMPLE, or keep for your collection!"
+                "text": "Trade in for KUP, or keep for your collection!"
             }
         },
         {
@@ -908,7 +908,7 @@
         {
             "data": {
                 "stringId": 628,
-                "text": "When you trade in this NFT to receive SIMPLE, you will lose access to it forever!"
+                "text": "When you trade in this NFT to receive KUP, you will lose access to it forever!"
             }
         },
         {
@@ -938,7 +938,7 @@
         {
             "data": {
                 "stringId": 638,
-                "text": "Winners can trade in their NFTs for a SIMPLE value until the expiry date written below. If you don't trade in your NFT by then, don\u2019t worry: you\u2019ll still keep it in your wallet!"
+                "text": "Winners can trade in their NFTs for a KUP value until the expiry date written below. If you don't trade in your NFT by then, don\u2019t worry: you\u2019ll still keep it in your wallet!"
             }
         },
         {
@@ -980,7 +980,7 @@
         {
             "data": {
                 "stringId": 654,
-                "text": "Trade in for SIMPLE"
+                "text": "Trade in for KUP"
             }
         },
         {
@@ -1106,7 +1106,7 @@
         {
             "data": {
                 "stringId": 696,
-                "text": "Stake LP tokens to earn SIMPLE"
+                "text": "Stake LP tokens to earn KUP"
             }
         },
         {
@@ -1148,13 +1148,13 @@
         {
             "data": {
                 "stringId": 708,
-                "text": "The SIMPLE Lottery"
+                "text": "The KUP Lottery"
             }
         },
         {
             "data": {
                 "stringId": 710,
-                "text": "Buy tickets with SIMPLE"
+                "text": "Buy tickets with KUP"
             }
         },
         {
@@ -1208,7 +1208,7 @@
         {
             "data": {
                 "stringId": 10000,
-                "text": "Deposit Fee will be used to buyback SIMPLE"
+                "text": "Deposit Fee will be used to buyback KUP"
             }
         },
         {
@@ -1220,7 +1220,7 @@
         {
             "data": {
                 "stringId": 10002,
-                "text": "Stake tokens to earn SIMPLE"
+                "text": "Stake tokens to earn KUP"
             }
         },
         {

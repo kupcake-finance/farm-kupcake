@@ -136,7 +136,7 @@ const Referral: React.FC<FarmsProps> = (liquidity) => {
             {isLiquidity ? 'Pair tokens to create LPs.' : 'Seamlessly convert your tokens.'}
           </SubTitle2>
           {isLiquidity ? (
-            <MarginLink href="https://exchange.pancakeswap.finance/#/add/BNB/0xa874fa1A7a9C8696b95180646ccbC8ca6B4512d3">
+            <MarginLink href="https://exchange.pancakeswap.finance/#/add/KCS/0xa874fa1A7a9C8696b95180646ccbC8ca6B4512d3">
               <Text color="textSubtle">Create liquidity on pancakeswap website &gt;</Text>
             </MarginLink>
           ) : (
@@ -153,7 +153,7 @@ const Referral: React.FC<FarmsProps> = (liquidity) => {
         <Relative>
           {isLiquidity ? (
             <PoocoinIframe
-              url="https://exchange.pancakeswap.finance/#/add/BNB/0xa874fa1A7a9C8696b95180646ccbC8ca6B4512d3"
+              url="https://exchange.pancakeswap.finance/#/add/KCS/0xa874fa1A7a9C8696b95180646ccbC8ca6B4512d3"
               title="LP"
             />
           ) : (

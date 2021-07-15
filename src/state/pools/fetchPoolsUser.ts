@@ -12,9 +12,9 @@ import BigNumber from 'bignumber.js'
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
-// BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
-const nonBnbPools = poolsConfig.filter((p) => p.stakingTokenName !== QuoteToken.BNB)
-const bnbPools = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.BNB)
+// KCS pools use the native KCS token (wrapping ? unwrapping is done at the contract level)
+const nonBnbPools = poolsConfig.filter((p) => p.stakingTokenName !== QuoteToken.KCS)
+const bnbPools = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.KCS)
 const nonMasterPools = poolsConfig.filter((p) => p.sousId !== 0)
 const web3 = getWeb3()
 const masterChefContract = new web3.eth.Contract((masterChefABI as unknown) as AbiItem, getMasterChefAddress())
@@ -34,7 +34,7 @@ export const fetchPoolsAllowance = async (account) => {
 }
 
 export const fetchUserBalances = async (account) => {
-  // Non BNB pools
+  // Non KCS pools
   const calls = nonBnbPools.map((p) => ({
     address: p.stakingTokenAddress,
     name: 'balanceOf',
@@ -46,7 +46,7 @@ export const fetchUserBalances = async (account) => {
     {},
   )
 
-  // BNB pools
+  // KCS pools
   const bnbBalance = await web3.eth.getBalance(account)
   const bnbBalances = bnbPools.reduce(
     (acc, pool) => ({ ...acc, [pool.sousId]: new BigNumber(bnbBalance).toJSON() }),

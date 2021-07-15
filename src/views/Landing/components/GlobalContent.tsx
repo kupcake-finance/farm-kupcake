@@ -152,21 +152,21 @@ export default function GlobalContent() {
               <PinkSpan>Ku</PinkSpan>pcat
             </MiniCardTitle>
             <MiniCardImage src="/images/common/avatar-kupcat.png" alt="kupcake" />
-            <MiniCardText>Smart Contract Developper</MiniCardText>
+            <MiniCardText>Smart Contract Developer</MiniCardText>
           </MiniCard>
           <MiniCard>
             <MiniCardTitle>
               <PinkSpan>Ku</PinkSpan>pid
             </MiniCardTitle>
             <MiniCardImage src="/images/common/avatar-kupid.png" alt="kupcake" />
-            <MiniCardText>Web 3 Developper</MiniCardText>
+            <MiniCardText>Web 3 Developer</MiniCardText>
           </MiniCard>
           <MiniCard>
             <MiniCardTitle>
               <PinkSpan>Ku</PinkSpan>ptain
             </MiniCardTitle>
             <MiniCardImage src="/images/common/avatar-kuptain.png" alt="kupcake" />
-            <MiniCardText>Front-end Developper</MiniCardText>
+            <MiniCardText>Front-end Developer</MiniCardText>
           </MiniCard>
           <MiniCard>
             <MiniCardTitle>

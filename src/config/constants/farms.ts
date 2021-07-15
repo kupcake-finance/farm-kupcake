@@ -6,12 +6,12 @@ const farms: FarmConfig[] = [
     pid: 10,
     risk: 5,
     isTokenOnly: true,
-    lpSymbol: 'SIMPLE',
+    lpSymbol: 'KUP',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
-    tokenSymbol: 'SIMPLE',
+    tokenSymbol: 'KUP',
     tokenAddresses: {
       97: '',
       56: '0x98899133e0dBc6797925391B8125bC9001c261A4',
@@ -26,7 +26,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'KCS',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'KCS',
     tokenAddresses: {
@@ -43,7 +43,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'CANDY',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'CANDY',
     tokenAddresses: {
@@ -60,7 +60,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'KOFFEE',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'KOFFEE',
     tokenAddresses: {
@@ -77,7 +77,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'KUBEANS',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'KUBEANS',
     tokenAddresses: {
@@ -94,7 +94,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'KUD',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'KUD',
     tokenAddresses: {
@@ -111,7 +111,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'KUDO',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'KUDO',
     tokenAddresses: {
@@ -128,7 +128,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'KUDOS',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'KUDOS',
     tokenAddresses: {
@@ -145,7 +145,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'KUS',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'KUS',
     tokenAddresses: {
@@ -162,7 +162,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'LAMBO',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'LAMBO',
     tokenAddresses: {
@@ -179,7 +179,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'WKCS',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'WKCS',
     tokenAddresses: {
@@ -196,7 +196,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'USDC',
     lpAddresses: {
       97: '',
-      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // SIMPLE-BUSD LP
+      56: '0xac1A7385092Be5211985C9f4682F381d378D118e', // KUP-BUSD LP
     },
     tokenSymbol: 'USDC',
     tokenAddresses: {
@@ -210,12 +210,12 @@ const farms: FarmConfig[] = [
   {
     pid: 0,
     risk: 5,
-    lpSymbol: 'SIMPLE-BUSD',
+    lpSymbol: 'KUP-BUSD',
     lpAddresses: {
       97: '',
       56: '0xac1A7385092Be5211985C9f4682F381d378D118e',
     },
-    tokenSymbol: 'SIMPLE',
+    tokenSymbol: 'KUP',
     tokenAddresses: {
       97: '',
       56: '0x98899133e0dBc6797925391B8125bC9001c261A4',
@@ -226,28 +226,28 @@ const farms: FarmConfig[] = [
   {
     pid: 1,
     risk: 5,
-    lpSymbol: 'SIMPLE-BNB',
+    lpSymbol: 'KUP-KCS',
     lpAddresses: {
       97: '',
       56: '0xD8904c2F1f414cCEc01C53Be61e811B34567Af5a',
     },
-    tokenSymbol: 'SIMPLE',
+    tokenSymbol: 'KUP',
     tokenAddresses: {
       97: '',
       56: '0x98899133e0dBc6797925391B8125bC9001c261A4',
     },
-    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenSymbol: QuoteToken.KCS,
     quoteTokenAdresses: contracts.wbnb,
   },
   {
     pid: 2,
     risk: 3,
-    lpSymbol: 'BNB-BUSD',
+    lpSymbol: 'KCS-BUSD',
     lpAddresses: {
       97: '',
       56: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',
     },
-    tokenSymbol: 'BNB',
+    tokenSymbol: 'KCS',
     tokenAddresses: {
       97: '',
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
@@ -258,7 +258,7 @@ const farms: FarmConfig[] = [
   {
     pid: 3,
     risk: 2,
-    lpSymbol: 'CAKE-BNB',
+    lpSymbol: 'CAKE-KCS',
     lpAddresses: {
       97: '',
       56: '0x0eD7e52944161450477ee417DE9Cd3a859b14fD0',
@@ -268,7 +268,7 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
-    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenSymbol: QuoteToken.KCS,
     quoteTokenAdresses: contracts.wbnb,
   },
 ]

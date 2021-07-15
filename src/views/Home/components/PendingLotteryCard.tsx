@@ -44,7 +44,7 @@ const PendingLotteryCard = () => {
     <StyledLotteryCard>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(999, 'SIMPLE Lottery')}
+          {TranslateString(999, 'KUP Lottery')}
         </Heading>
         <CardImage src="/images/common/ticket.png" alt="cake logo" width={64} height={64} />
         <Block>

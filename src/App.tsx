@@ -50,7 +50,7 @@ const App: React.FC = () => {
         <Menu />
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <Landing />
           </Route>
           <Route path="/farms">
             <Farms />
@@ -58,24 +58,24 @@ const App: React.FC = () => {
           {/* <Route path="/pools">
             <Farms tokenMode />
           </Route> */}
-          <Route path="/referrals">
+          {/* <Route path="/referrals">
             <Referral />
-          </Route>
+          </Route> */}
           {/* <Route path="/swap">
             <Swap />
           </Route> */}
-          <Route path="/liquidity">
+          {/* <Route path="/liquidity">
             <Swap isLiquidity />
           </Route>
           <Route path="/chart">
             <Chart />
-          </Route>
-          <Route path="/landing">
+          </Route> */}
+          {/* <Route path="/landing">
             <Landing />
-          </Route>
-          <Route path="/details">
+          </Route> */}
+          {/* <Route path="/details">
             <FarmsDetails />
-          </Route>
+          </Route> */}
           {/* <Route path="/pools">
              <Pools />
             </Route> */}

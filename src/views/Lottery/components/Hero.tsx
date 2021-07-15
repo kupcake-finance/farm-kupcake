@@ -117,7 +117,7 @@ const Hero = () => {
         <MainTitle as="h1" size="xl" mb="0px" mt="30px" color="tertiary">
           The Lottery.
         </MainTitle>
-        <SubTitle2>Buy tickets with SIMPLE</SubTitle2>
+        <SubTitle2>Buy tickets with KUP</SubTitle2>
         <img src="/images/common/lottery-bg.png" alt="Swap" />
       </Header>
       <StyledHero>

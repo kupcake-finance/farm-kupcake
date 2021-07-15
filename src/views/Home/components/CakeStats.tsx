@@ -26,10 +26,15 @@ const StyledCakeStats = styled(Card)`
   box-shadow: 0px 5px 10px #9f9f9f;
   border: 7px solid white;
   transition: all 0.2s ease-in-out;
+  background-image: url('/images/common/cupcake-analyst.png');
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position-x: left;
+  background-position-y: bottom;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
-    transform: translate3d(0px, -4px, 0px);
+    transform: translate3d(0px, -1px, 0px);
   }
 `
 
@@ -166,7 +171,7 @@ const CakeStats = () => {
             </Text>
 
             <Text fontSize="25px" color="#48cae4">
-              {TranslateString(123456, 'SIMPLE/block')}
+              {TranslateString(123456, 'KUP/block')}
             </Text>
           </LabelContainer>
 

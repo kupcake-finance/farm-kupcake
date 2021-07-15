@@ -20,7 +20,7 @@ export interface Ifo {
 }
 
 export enum QuoteToken {
-  'BNB' = 'BNB',
+  'KCS' = 'KCS',
   'CAKE' = 'CAKE',
   'SYRUP' = 'SYRUP',
   'BUSD' = 'BUSD',
@@ -31,7 +31,7 @@ export enum QuoteToken {
 export enum PoolCategory {
   'COMMUNITY' = 'Community',
   'CORE' = 'Core',
-  'BINANCE' = 'Binance', // Pools using native BNB behave differently than pools using a token
+  'BINANCE' = 'Binance', // Pools using native KCS behave differently than pools using a token
 }
 
 export interface Address {
