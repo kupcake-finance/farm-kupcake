@@ -307,7 +307,7 @@ const FarmedStakingCard = () => {
   const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
   const cakeBalance = getBalanceNumber(useTokenBalance(getCakeAddress()))
-  const nativePrice = usePriceCakeBusd().toNumber()
+  const eggPrice = usePriceCakeBusd().toNumber()
   const allEarnings = useAllEarnings()
   const earningsSum = allEarnings.reduce((accum, earning) => {
     return accum + new BigNumber(earning).div(new BigNumber(10).pow(18)).toNumber()
@@ -371,7 +371,7 @@ const FarmedStakingCard = () => {
               <Spacer>
                 <StyledCakeHarvestBalance earningsSum={earningsSum} />
               </Spacer>
-              <MarginLabel>~${(nativePrice * earningsSum).toFixed(2)}</MarginLabel>
+              <MarginLabel>~${(eggPrice * earningsSum).toFixed(2)}</MarginLabel>
             </Flex>
           </LineFlex>
           <>
@@ -405,7 +405,7 @@ const FarmedStakingCard = () => {
               <Spacer>
                 <StyledCakeWalletBalance cakeBalance={cakeBalance} />
               </Spacer>
-              <MarginLabel>~${(nativePrice * cakeBalance).toFixed(2)}</MarginLabel>
+              <MarginLabel>~${(eggPrice * cakeBalance).toFixed(2)}</MarginLabel>
             </Flex>
           </LineFlex>
           <DesktopRowMobileColumn>

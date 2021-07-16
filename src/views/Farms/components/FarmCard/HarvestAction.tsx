@@ -18,7 +18,41 @@ const BalanceAndCompound = styled.div`
   justify-content: space-between;
   flex-direction: column;
 `
+const StyledButton = styled(Button)`
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #48cae4;
+  margin-right: 5px;
+  height: 50px;
+  font-weight: 600;
+  max-width: 300px;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #fff !important;
 
+  & > svg,
+  & > svg > * {
+    fill: #fff;
+  }
+
+  &:hover {
+    color: #48cae4;
+    background-color: #fff;
+    border: 2px solid #48cae4 !important;
+
+    & > svg,
+    & > svg > * {
+      fill: #48cae4;
+    }
+  }
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &:active {
+    background-color: #fff;
+  }
+`
 const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const TranslateString = useI18n()
   const [pendingTx, setPendingTx] = useState(false)
@@ -29,11 +63,11 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
-    <Flex mb='8px' justifyContent='space-between' alignItems='center'>
-      <Heading color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>{displayBalance}</Heading>
+    <Flex mb='8px' justifyContent='space-between' alignItems='center' flexDirection="column">
+      <Heading mb='8px' color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>{displayBalance}</Heading>
       <BalanceAndCompound>
         {pid === 12 ?
-          <Button
+          <StyledButton
             disabled={rawEarningsBalance === 0 || pendingTx}
             size='sm'
             variant='secondary'
@@ -45,9 +79,9 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
             }}
           >
             {TranslateString(999, 'Compound')}
-          </Button>
+          </StyledButton>
           : null}
-        <Button
+        <StyledButton
           disabled={rawEarningsBalance === 0 || pendingTx}
           onClick={async () => {
             setPendingTx(true)
@@ -56,7 +90,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
           }}
         >
           {TranslateString(999, 'Harvest')}
-        </Button>
+        </StyledButton>
       </BalanceAndCompound>
     </Flex>
   )

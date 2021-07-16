@@ -130,14 +130,14 @@ const CakeStats = () => {
   const totalSupply = useTotalSupply()
   const burnedBalance = useBurnedBalance(getCakeAddress())
   const farms = useFarms()
-  const nativePrice = usePriceCakeBusd()
+  const eggPrice = usePriceCakeBusd()
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
   const cakeSupply = getBalanceNumber(circSupply)
-  const marketCap = nativePrice.times(circSupply)
+  const marketCap = eggPrice.times(circSupply)
 
-  let nativePerBlock = 0
-  if (farms && farms[0] && farms[0].nativePerBlock) {
-    nativePerBlock = new BigNumber(farms[0].nativePerBlock).div(new BigNumber(10).pow(18)).toNumber()
+  let eggPerBlock = 0
+  if (farms && farms[0] && farms[0].eggPerBlock) {
+    eggPerBlock = new BigNumber(farms[0].eggPerBlock).div(new BigNumber(10).pow(18)).toNumber()
   }
 
   return (
@@ -186,7 +186,7 @@ const CakeStats = () => {
 
             {cakeSupply && <CardValue fontSize="25px" value={cakeSupply} decimals={0} color="#ff629a" />}
 
-            <CardValue fontSize="25px" value={nativePerBlock} decimals={0} color="#ff629a" />
+            <CardValue fontSize="25px" value={eggPerBlock} decimals={0} color="#ff629a" />
           </ValuesContainer>
         </RowContainer>
       </StyledCardBody>

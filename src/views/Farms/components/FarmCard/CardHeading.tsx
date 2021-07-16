@@ -13,13 +13,39 @@ export interface ExpandableSectionProps {
 }
 
 const Wrapper = styled(Flex)`
+  flex-direction: column;
   svg {
     margin-right: 0.25rem;
   }
 `
 
+const Relative = styled.div`
+  position: relative;
+  width:100%;
+`
+
 const MultiplierTag = styled(Tag)`
   margin-left: 4px;
+`
+const Blur = styled.div`
+      height: 70px;
+    width: 70px;
+    background-color: transparent;
+    box-shadow: 0 0 30px #000;
+    position: absolute;
+    border-radius: 100px;
+    left: 33px;
+    top: 28px;
+    z-index: 1;
+`
+
+const StyledImg = styled(Image)`
+  z-index:2;
+`
+
+const FullFlex = styled(Flex)`
+  width: 100%;
+  padding: 0 5px;
 `
 
 const CardHeading: React.FC<ExpandableSectionProps> = ({
@@ -31,18 +57,21 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
   depositFee,
 }) => {
   return (
-    <Wrapper justifyContent="space-between" alignItems="center" mb="12px">
-      <Image src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={64} height={64} />
-      <Flex flexDirection="column" alignItems="flex-end">
-        <Heading mb="4px">{lpLabel}</Heading>
-        <Flex justifyContent="center">
-          {depositFee === 0 ? <NoFeeTag /> : null}
+    <Relative>
+    <Wrapper justifyContent="space-between" alignItems="center" mb="15px" mt="15px">
+      <StyledImg src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={92} height={92} mb={10}/>
+        {/* <Blur /> */}
+      <FullFlex flexDirection="column" alignItems="center">
+        <Heading mb="10px">{lpLabel}</Heading>
+        <FullFlex justifyContent="space-between" mt={20}>
+          <NoFeeTag />
           {/* {isCommunityFarm ? <CommunityTag /> : <CoreTag />} */}
           {/* <RiskTag risk={risk} /> */}
           <MultiplierTag variant="secondary">{multiplier}</MultiplierTag>
-        </Flex>
-      </Flex>
+        </FullFlex>
+      </FullFlex>
     </Wrapper>
+    </Relative>
   )
 }
 

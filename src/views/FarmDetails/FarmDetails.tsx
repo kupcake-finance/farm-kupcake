@@ -476,61 +476,11 @@ const DepositButton = styled(SwitchButton)``
 const WithdrawButton = styled(SwitchButton)``
 const WithdrawExitButton = styled(SwitchButton)``
 
-interface FarmCardProps {
-  farm: FarmWithStakedValue
-  removed: boolean
-  cakePrice?: BigNumber
-  bnbPrice?: BigNumber
-  ethereum?: provider
-  account?: string
-}
 
-const FarmDetails: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice, ethereum, account }) => {
-  const TranslateString = useI18n()
 
-  const [showExpandableSection, setShowExpandableSection] = useState(false)
-  const { pid, lpAddresses, tokenAddresses, isTokenOnly, depositFeeBP, harvestInterval, userData } = useFarmFromPid(
-    farm.pid,
-  )
-  const { allowance, tokenBalance, stakedBalance, earnings } = useFarmUser(pid)
-  const tokenAddress = tokenAddresses[process.env.REACT_APP_CHAIN_ID]
-  const [nextHarvest, setNextHarvest] = useState(Number)
+const FarmDetails: React.FC = () => {
 
-  // const isCommunityFarm = communityFarms.includes(farm.tokenSymbol)
-  // We assume the token name is coin pair + lp e.g. CAKE-KCS LP, LINK-KCS LP,
-  // NAR-CAKE LP. The images should be cake-bnb.svg, link-bnb.svg, nar-cake.svg
-  // const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
-  const farmImage = farm.isTokenOnly
-    ? farm.tokenSymbol.toLowerCase()
-    : `${farm.tokenSymbol.toLowerCase()}-${farm.quoteTokenSymbol.toLowerCase()}`
 
-  const totalValue: BigNumber = useMemo(() => {
-    if (!farm.lpTotalInQuoteToken) {
-      return null
-    }
-    if (farm.quoteTokenSymbol === QuoteToken.KCS) {
-      return bnbPrice.times(farm.lpTotalInQuoteToken)
-    }
-    if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
-      return cakePrice.times(farm.lpTotalInQuoteToken)
-    }
-    return farm.lpTotalInQuoteToken
-  }, [bnbPrice, cakePrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
-
-  const totalValueFormated = totalValue
-    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
-    : '-'
-
-  const lpLabel = farm.lpSymbol
-  const earnLabel = 'KUP'
-  const farmAPY =
-    farm.apy &&
-    farm.apy.times(new BigNumber(100)).toNumber().toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    })
-
-  const { quoteTokenAdresses, quoteTokenSymbol, risk } = farm
   return (
     <Container>
       <StyledDetailsCard>
@@ -546,15 +496,15 @@ const FarmDetails: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPri
 
         {/* ## HEADER */}
         {/* Image needs to be replaced with correct token or pair (__TOKEN__.png) */}
-        <TokenImage src="/images/common/logo.png" alt="{farm.lpSymbol}" />
-        <MainTitle>{farm.lpSymbol}</MainTitle>
-        <SubTitle>Stake {farm.lpSymbol} : Earn KUP</SubTitle>
+        <TokenImage src="/images/common/logo.png" alt="token" />
+        <MainTitle>tttt</MainTitle>
+        <SubTitle>Stake token : Earn KUP</SubTitle>
 
         {/* INFORMATION BANNER AND SWAP/ZAP BUTTON */}
         <InfoBanner>
-          <BannerTitle>Get {farm.lpSymbol} tokens first</BannerTitle>
+          <BannerTitle>Get token tokens first</BannerTitle>
           <BannerSubText>
-            {farm.lpSymbol} tokens are required. Once you&apos;ve added liquidity to the KupcakeSwap {farm.lpSymbol}{' '}
+            token tokens are required. Once you&apos;ve added liquidity to the KupcakeSwap token{' '}
             pool you can deposit your liquidity tokens on this page.
           </BannerSubText>
           <BannerButton>
@@ -584,7 +534,7 @@ const FarmDetails: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPri
             <InfoTitle>APY / APR</InfoTitle>
             <ValuesContainer>
               {/* APR value */}
-              <MidValue>{farmAPY}%</MidValue>
+              <MidValue>99%</MidValue>
 
               {/* Rawarded token names */}
               <RightValue>KUP</RightValue>
@@ -596,7 +546,7 @@ const FarmDetails: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPri
             <ValuesContainer>
               {/* Amount of tokens / LP added by user (default 0) */}
               <MidValue>__DEPOSIT_AMOUNT__</MidValue>
-              <RightValue>{farm.lpSymbol}</RightValue>
+              <RightValue>token</RightValue>
             </ValuesContainer>
           </FarmingInfo>
 
@@ -641,7 +591,7 @@ const FarmDetails: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPri
             <DepositWithdrawInput />
 
             {/* Replace by Token or LP name */}
-            <DepositWithdrawToken>{farm.lpSymbol}</DepositWithdrawToken>
+            <DepositWithdrawToken>token</DepositWithdrawToken>
 
             {/* Add max token amount based on wallet balance */}
             <MaxButton>MAX</MaxButton>
@@ -652,7 +602,7 @@ const FarmDetails: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPri
             <DepositWidthdrawFees>__AMOUNT__ __TYPE__ fees</DepositWidthdrawFees>
 
             {/* Amount of token / LP currently owned bu user waller */}
-            <WalletBalance>WALLET BALANCE: __AMOUNT__ {farm.lpSymbol}</WalletBalance>
+            <WalletBalance>WALLET BALANCE: __AMOUNT__ token</WalletBalance>
           </WalletBalanceContainer>
         </DepositWithdrawContainer>
 

@@ -1,6 +1,6 @@
 export default {
   cake: {
-    56: '0x04ac2CE0763De662657308df1E7e14596a82149A',
+    56: '0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6',
     97: '',
   },
   masterChef: {
@@ -12,7 +12,7 @@ export default {
     97: '',
   },
   lottery: {
-    56: '0x6eAD6323a254310B1979eb628f3Ab5cf4915A5E0',
+    56: '',
     97: '',
   },
   lotteryNFT: {

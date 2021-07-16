@@ -12,7 +12,7 @@ import BigNumber from 'bignumber.js'
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
-// KCS pools use the native KCS token (wrapping ? unwrapping is done at the contract level)
+// KCS pools use the egg KCS token (wrapping ? unwrapping is done at the contract level)
 const nonBnbPools = poolsConfig.filter((p) => p.stakingTokenName !== QuoteToken.KCS)
 const bnbPools = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.KCS)
 const nonMasterPools = poolsConfig.filter((p) => p.sousId !== 0)
@@ -93,7 +93,7 @@ export const fetchUserPendingRewards = async (account) => {
   )
 
   // Cake / Cake pool
-  const pendingReward = await masterChefContract.methods.pendingNative('0', account).call()
+  const pendingReward = await masterChefContract.methods.pendingEgg('0', account).call()
 
   return { ...pendingRewards, 0: new BigNumber(pendingReward).toJSON() }
 }

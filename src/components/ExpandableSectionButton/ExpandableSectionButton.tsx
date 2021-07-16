@@ -12,9 +12,10 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  flex-direction: column;
 
   svg {
-    fill: #f5f5f7;
+    fill: #000;
   }
 `
 

@@ -166,9 +166,10 @@ export default function Menu() {
           <StyledA href="/">
             Presale<span>(soon)</span>
           </StyledA>
-          {/* <StyledA href="/swap">Swap</StyledA> */}
-          {/* <StyledA href="/liquidity">Liquidity</StyledA> */}
-          {/* <StyledA href="/farms">Farms</StyledA> */}
+          <StyledA href="/swap">Swap</StyledA>
+          <StyledA href="/liquidity">Liquidity</StyledA>
+          <StyledA href="/farms">Farms</StyledA>
+          <StyledA href="/pools">Pools</StyledA>
           <DocsMenu />
           <CustomizedMenus />
         </LinksContainer>

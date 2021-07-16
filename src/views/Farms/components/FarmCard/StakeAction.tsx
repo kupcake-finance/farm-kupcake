@@ -24,6 +24,42 @@ const IconButtonWrapper = styled.div`
   }
 `
 
+const StyledButton = styled(Button)`
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #48cae4;
+  margin-right: 5px;
+  height: 50px;
+  font-weight: 600;
+  max-width: 300px;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #fff !important;
+
+  & > svg,
+  & > svg > * {
+    fill: #fff;
+  }
+
+  &:hover {
+    color: #48cae4;
+    background-color: #fff;
+    border: 2px solid #48cae4 !important;
+
+    & > svg,
+    & > svg > * {
+      fill: #48cae4;
+    }
+  }
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &:active {
+    background-color: #fff;
+  }
+`
+
 const StakeAction: React.FC<FarmCardActionsProps> = ({ stakedBalance, tokenBalance, tokenName, pid, depositFeeBP}) => {
   const TranslateString = useI18n()
   const { onStake } = useStake(pid)
@@ -39,15 +75,15 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({ stakedBalance, tokenBalan
 
   const renderStakingButtons = () => {
     return rawStakedBalance === 0 ? (
-      <Button onClick={onPresentDeposit}>{TranslateString(999, 'Stake')}</Button>
+      <StyledButton onClick={onPresentDeposit}>{TranslateString(999, 'Stake')}</StyledButton>
     ) : (
       <IconButtonWrapper>
-        <IconButton variant="tertiary" onClick={onPresentWithdraw} mr="6px">
+        <StyledButton variant="tertiary" onClick={onPresentWithdraw} mr="6px">
           <MinusIcon color="primary" />
-        </IconButton>
-        <IconButton variant="tertiary" onClick={onPresentDeposit}>
+        </StyledButton>
+        <StyledButton variant="tertiary" onClick={onPresentDeposit}>
           <AddIcon color="primary" />
-        </IconButton>
+        </StyledButton>
       </IconButtonWrapper>
     )
   }

@@ -51,7 +51,7 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
   return (
     <Wrapper>
       <Flex justifyContent="space-between">
-        <Text>{TranslateString(316, 'Stake')}:</Text>
+        <Text>{TranslateString(99999, 'Stake')}:</Text>
         <StyledLinkExternal href={
           isTokenOnly ?
             `https://exchange.goosedefi.com/#/swap/${tokenAddresses[process.env.REACT_APP_CHAIN_ID]}`
@@ -69,7 +69,7 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
       )}
       <Flex justifyContent="flex-start">
         <Link external href={bscScanAddress} bold={false}>
-          {TranslateString(356, 'View on BscScan')}
+          {TranslateString(356, 'view on KCC Explorer')}
         </Link>
       </Flex>
     </Wrapper>

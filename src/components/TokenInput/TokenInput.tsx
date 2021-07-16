@@ -11,7 +11,56 @@ interface TokenInputProps extends InputProps {
   onSelectMax?: () => void
   depositFeeBP?: number
 }
+const StyledButton = styled(Button)`
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #48cae4;
+  margin-right: 5px;
+  height: 35px;
+  font-weight: 600;
+  max-width: 300px;
+  box-shadow: none;
+  transition: all 0.2s ease-in-out; 
+  border: 2px solid #fff !important;
 
+  & > svg,
+  & > svg > * {
+    fill: #fff;
+  }
+
+  &:hover {
+    color: #48cae4;
+    background-color: transparent !important;
+    border: 2px solid #48cae4 !important;
+
+    & > svg,
+    & > svg > * {
+      fill: #48cae4;
+    }
+  }
+
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &:active {
+    background-color: transparent !important;
+  }
+`
+
+const StyledButtonRed = styled(StyledButton)`
+  background-color: #ff629a;
+
+  &:hover {
+    border: 2px solid #ff629a !important;
+    color:  #ff629a !important;
+
+    & > svg,
+    & > svg > * {
+      fill: #ff629a;
+    }
+  }
+
+`
 const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelectMax, value, depositFeeBP = 0 }) => {
   const TranslateString = useI18n()
   return (
@@ -25,9 +74,9 @@ const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelect
             <StyledTokenSymbol>{symbol}</StyledTokenSymbol>
             <StyledSpacer />
             <div>
-              <Button size="sm" onClick={onSelectMax}>
+              <StyledButton size="sm" onClick={onSelectMax}>
                 {TranslateString(452, 'Max')}
-              </Button>
+              </StyledButton>
             </div>
           </StyledTokenAdornmentWrapper>
         }

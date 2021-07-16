@@ -55,11 +55,7 @@ export const fetchFarmUserStakedBalances = async (account: string) => {
     return new BigNumber(stakedBalance[0]._hex).toJSON()
   })
 
-  const lockUntil = rawStakedBalances.map((stakedBalance) => {
-    return new BigNumber(stakedBalance[3]._hex).toJSON()
-  })
-
-  return [parsedStakedBalances, lockUntil]
+  return parsedStakedBalances
 }
 
 export const fetchFarmUserEarnings = async (account: string) => {
@@ -68,7 +64,7 @@ export const fetchFarmUserEarnings = async (account: string) => {
   const calls = farmsConfig.map((farm) => {
     return {
       address: masterChefAdress,
-      name: 'pendingNative',
+      name: 'pendingEgg',
       params: [farm.pid, account],
     }
   })

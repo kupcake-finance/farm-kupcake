@@ -104,13 +104,12 @@ const fetchFarms = async () => {
         },
         {
           address: getMasterChefAddress(),
-          name: 'nativePerBlock',
+          name: 'eggPerBlock',
         },
       ])
 
       const allocPoint = new BigNumber(info.allocPoint._hex)
       const poolWeight = allocPoint.div(new BigNumber(totalAllocPoint))
-      const harvestIntervalTime = new BigNumber(info.harvestInterval._hex).toNumber()
 
       return {
         ...farmConfig,
@@ -121,7 +120,6 @@ const fetchFarms = async () => {
         poolWeight: poolWeight.toNumber(),
         multiplier: `${allocPoint.div(100).toString()}X`,
         depositFeeBP: info.depositFeeBP,
-        harvestInterval: harvestIntervalTime,
         eggPerBlock: new BigNumber(eggPerBlock).toNumber(),
       }
     }),
