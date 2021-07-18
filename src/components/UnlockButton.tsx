@@ -7,11 +7,11 @@ import useI18n from 'hooks/useI18n'
 const RobotoButton = styled(Button)`
   position: relative !important;
   font-family: 'Roboto', sans-serif;
-  max-width: 45%;
+  max-width: 40%;
   min-width: 200px;
   font-weight: 500;
-  font-size: 22px;
-  height: 70px;
+  font-size: 20px;
+  height: 50px;
   background-color: rgba(255, 255, 255, 0) !important;
   border: none;
   box-shadow: 0 0 10px #ff629a;
@@ -73,11 +73,11 @@ const MetaRobotoButton = styled(RobotoButton)`
     width: 100%;
     height: 100%;
     border-radius: 60px;
-    background-size: 28%;
+    background-size: 20%;
     opacity: 0.7;
     background-repeat: no-repeat;
     overflow: hidden;
-    background-position-x: -17px;
+    background-position-x: 10px;
     background-position-y: center;
   }
 

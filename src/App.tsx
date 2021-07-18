@@ -52,12 +52,12 @@ const App: React.FC = () => {
           <Route path="/" exact>
             <Landing />
           </Route>
-          <Route path="/farms">
+          {/* <Route path="/farms">
             <Farms />
-          </Route>
-          <Route path="/pools">
+          </Route> */}
+          {/* <Route path="/pools">
             <Farms tokenMode />
-          </Route>
+          </Route> */}
           {/* <Route path="/referrals">
             <Referral />
           </Route> */}
@@ -73,9 +73,9 @@ const App: React.FC = () => {
           {/* <Route path="/landing">
             <Landing />
           </Route> */}
-          <Route path="/details">
+          {/* <Route path="/details">
             <FarmsDetails />
-          </Route>
+          </Route> */}
           {/* <Route path="/pools">
              <Pools />
             </Route> */}
@@ -96,7 +96,7 @@ const App: React.FC = () => {
           {/*  <Redirect to="/pools" /> */}
           {/* </Route> */}
           {/* 404 */}
-          <Route component={NotFound} />
+          <Route component={Landing} />
         </Switch>
       </Suspense>
       {/* </Menu> */}

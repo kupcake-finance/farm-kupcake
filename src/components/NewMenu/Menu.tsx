@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Link } from 'react-scroll'
 import { withStyles } from '@material-ui/core/styles'
 import { Button, Flex, Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
+import UIMenu from '../Menu'
 import CustomizedMenus from './CustomizedMenus'
 import DocsMenu from './DocsMenu'
 import MobileMenu from './MobileMenu'
@@ -142,6 +143,8 @@ const Background = styled.div`
   z-index: -1;
 `
 
+const WebContainer = styled.div``
+
 export default function Menu() {
   const location = useLocation()
 
@@ -174,13 +177,15 @@ export default function Menu() {
           <CustomizedMenus />
         </LinksContainer>
 
-        <Flex justify-items="space-between" alignItems="center">
-          {/* <MetamaskMenu /> */}
+        {/* <Flex justify-items="space-between" alignItems="center">
           <RobotoButton>
             <SmallImage src="/images/common/logo.png" alt="token" />
             $00,00
           </RobotoButton>
-        </Flex>
+        </Flex> */}
+        <WebContainer>
+          {/* <UIMenu /> */}
+        </WebContainer>
       </MenuContainer>
     </>
   )

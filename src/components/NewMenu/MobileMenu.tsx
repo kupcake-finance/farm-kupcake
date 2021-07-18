@@ -18,6 +18,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import InboxIcon from '@material-ui/icons/MoveToInbox'
 import MailIcon from '@material-ui/icons/Mail'
+import UIMenu from '../Menu'
 
 const drawerWidth = 240
 
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
     },
     appBar: {
-      backgroundColor: 'rgba(255,255,255, 0.95)',
+      backgroundColor: 'rgba(255,255,255, 1)',
       transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -146,39 +147,14 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <ListItem>
-            <Button className="metamask-button">
-              <img
-                className="metamask-image"
-                src="/images/common/metamask.png"
-                style={{ height: '34px' }}
-                alt="metamask"
-              />
-            </Button>
-            {addressMeta === null ? (
-              <>
-                <span className="red meta-address">
-                  {/* First 4 chars */}
-                  0x04
-                </span>
-                <span className=""> ... </span>
-                <span className="blue meta-address">
-                  {/* last 4 chars */}
-                  5678
-                </span>
-              </>
-            ) : (
-              <span className="orangered meta-address"> Connect Metamask </span>
-            )}
-          </ListItem>
           <ListItem button key="Presale">
             <a href="https://presale.kupcakeswap.finance">
-              <ListItemText primary="Presale" />
+              <ListItemText primary="Presale  (soon)" />
             </a>
           </ListItem>
-          <ListItem button key="Dapp (soon)">
+          {/* <ListItem button key="Dapp (soon)">
             <ListItemText primary="Dapp (soon)" />
-          </ListItem>
+          </ListItem> */}
           <ListItem button key="Documentation">
             <a href="https://docs.kupcakeswap.finance">
               <ListItemText primary="Documentation" />
@@ -211,6 +187,10 @@ export default function PersistentDrawerLeft() {
               <ListItemText primary="Twitter" />
             </a>
           </ListItem>
+          <Divider style={{marginBottom:'20px'}}/>
+          {/* <ListItem>
+            <UIMenu />
+          </ListItem> */}
         </List>
       </Drawer>
     </div>

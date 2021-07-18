@@ -2,7 +2,7 @@ import React from 'react'
 import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from '@pancakeswap-libs/uikit'
 
 const NoFeeTag = () => (
-  <Tag variant="success" outline startIcon={<VerifiedIcon />}>
+  <Tag variant="secondary" outline startIcon={<VerifiedIcon />}>
     0% Fees
   </Tag>
 )

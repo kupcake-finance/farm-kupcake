@@ -195,7 +195,7 @@ export default function InfoContainerBlock() {
     <InfoContainer>
       <CountDownContainer>
         <MainBubbleTitle as="h1" size="xl" mb="24px" mt="30px" color="#fff">
-          presale launch <PinkSpan>in</PinkSpan>
+          presale launch
         </MainBubbleTitle>
         <Countdown
           date={1626364800000}
@@ -203,10 +203,11 @@ export default function InfoContainerBlock() {
           renderer={(props) => (
             <TimerContainer>
               <TimeElement>
-                <TimeValue>{zeroPad(props.days)}</TimeValue>
-                <TimeLabel>Days</TimeLabel>
+                <TimeValue> <PinkSpan>COMING</PinkSpan>SOON</TimeValue>
+                {/* <TimeValue>{zeroPad(props.days)}</TimeValue> */}
+                <TimeLabel>Follow our social medias for live updates</TimeLabel>
               </TimeElement>
-              <TimeElement>
+              {/* <TimeElement>
                 <TimeValue>{zeroPad(props.hours)}</TimeValue>
                 <TimeLabel>Hours</TimeLabel>
               </TimeElement>
@@ -219,7 +220,7 @@ export default function InfoContainerBlock() {
                   <PinkSpan>{zeroPad(props.seconds)}</PinkSpan>
                 </TimeValue>
                 <TimeLabel>Seconds</TimeLabel>
-              </TimeElement>
+              </TimeElement> */}
             </TimerContainer>
           )}
         />

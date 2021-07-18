@@ -48,6 +48,15 @@ const FullFlex = styled(Flex)`
   padding: 0 5px;
 `
 
+const StyledNoFeeTag = styled(NoFeeTag)`
+  color: #ff629a !important;
+
+  & > svg, & > svg > *, & > * > svg{
+    fill: #ff629a !important;
+  color: #ff629a !important;
+  }
+`
+
 const CardHeading: React.FC<ExpandableSectionProps> = ({
   lpLabel,
   multiplier,
@@ -64,7 +73,7 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
       <FullFlex flexDirection="column" alignItems="center">
         <Heading mb="10px">{lpLabel}</Heading>
         <FullFlex justifyContent="space-between" mt={20}>
-          <NoFeeTag />
+          <StyledNoFeeTag />
           {/* {isCommunityFarm ? <CommunityTag /> : <CoreTag />} */}
           {/* <RiskTag risk={risk} /> */}
           <MultiplierTag variant="secondary">{multiplier}</MultiplierTag>

@@ -51,6 +51,7 @@ const StyledDetailsCard = styled(Card)`
   transition: all 0.2s ease-in-out;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 10px;
 
   ${({ theme }) => theme.mediaQueries.xs} {
     margin-top: 30px;
@@ -59,7 +60,7 @@ const StyledDetailsCard = styled(Card)`
     margin-top: 30px;
   }
   ${({ theme }) => theme.mediaQueries.lg} {
-    margin-top: 70px;
+    margin-top: 30px;
   }
 `
 
@@ -102,10 +103,12 @@ const StyledCardAccent = styled.div`
 const FCardContainer = styled.div`
   display: flex;
   max-width: 23%;
+  border-radius: 30px;
 `
 
 const FCard = styled.div`
   border: 7px solid #fff;
+  border-radius: 30px;
   align-self: baseline;
   background-color: rgba(255, 255, 255, 0.9);
   /* border-radius: 32px; */
@@ -280,6 +283,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
             }
             bold={false}
             mt={10}
+            mb={10}
           >
             {TranslateString(356, 'View KCC Explorer')}
           </Link>
