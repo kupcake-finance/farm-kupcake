@@ -206,7 +206,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
 
   const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk } = farm
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
-  console.log(farm.multiplier)
   return (
     <FCardContainer>
       <StyledDetailsCard>
