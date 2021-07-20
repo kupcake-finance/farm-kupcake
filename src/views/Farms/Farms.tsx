@@ -57,7 +57,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const { tokenMode } = farmsProps
 
   const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
-  console.log(CHAIN_ID)
+  // console.log(CHAIN_ID)
 
   const dispatch = useDispatch()
   const { fastRefresh } = useRefresh()
@@ -106,8 +106,10 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         return { ...farm, apy }
       })
 
-      return farmsToDisplayWithAPY.map((farm) => (
-        <FarmCard
+      return farmsToDisplayWithAPY.map((farm) => {
+      
+
+        return (<FarmCard
           key={farm.pid}
           farm={farm}
           removed={removed}
@@ -116,7 +118,8 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           ethereum={ethereum}
           account={account}
         />
-      ))
+      )
+    })
     },
     [bnbPrice, account, cakePrice, ethereum],
   )

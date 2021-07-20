@@ -41,4 +41,10 @@ export default {
     321: '',
     322: '0x67f6a7BbE0da067A747C6b2bEdF8aBBF7D6f60dc',
   },
+  usdt: {
+    56: '',
+    97: '',
+    321: '',
+    322: '0x67f6a7BbE0da067A747C6b2bEdF8aBBF7D6f60dc',
+  },
 }
