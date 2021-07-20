@@ -62,6 +62,27 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
   },
+  {
+    pid: 3,
+    risk: 3,
+    lpSymbol: 'KUPCAKE',
+    isTokenOnly: true,
+    lpAddresses: {
+      97: '',
+      56: '',
+      321: '',
+      322: '0x01A98483eB0BC29D3F563cD6DBe52506Ee5e7547',
+    },
+    tokenSymbol: 'KUPCAKE',
+    tokenAddresses: {
+      97: '',
+      56: '',
+      321: '',
+      322: '0xaD323D0595Fc635f49499E62637E0aCe460B4067',
+    },
+    quoteTokenSymbol: QuoteToken.BUSD,
+    quoteTokenAdresses: contracts.busd,
+  },
 ]
 
 export default farms

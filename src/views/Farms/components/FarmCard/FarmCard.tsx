@@ -2,14 +2,11 @@ import React, { useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled, { keyframes } from 'styled-components'
 import { Flex, Text, Card, Link, Skeleton, LinkExternal } from '@pancakeswap-libs/uikit'
-import { communityFarms } from 'config/constants'
 import { Farm } from 'state/types'
 import { provider } from 'web3-core'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import useI18n from 'hooks/useI18n'
-import ExpandableSectionButton from 'components/ExpandableSectionButton'
-import { QuoteToken } from 'config/constants/types'
-import DetailsSection from './DetailsSection'
+import { QuoteToken } from 'config/constants/types' 
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
@@ -106,40 +103,7 @@ const FCardContainer = styled.div`
   border-radius: 30px;
 `
 
-const FCard = styled.div`
-  border: 7px solid #fff;
-  border-radius: 30px;
-  align-self: baseline;
-  background-color: rgba(255, 255, 255, 0.9);
-  /* border-radius: 32px; */
-  box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  position: relative;
-  text-align: center;
-  margin: 0 !important;
-  width: 100%;
-`
 
-const Divider = styled.div`
-  background-color: #dadada;
-  height: 1px;
-  margin: 28px auto;
-  width: 100%;
-`
-
-const StyledContainer = styled.div`
-  box-shadow: 0px 5px 10px #9f9f9f;
-  margin: 10px auto;
-  width: 100%;
-  background-color: #fff;
-`
-
-const ExpandingWrapper = styled.div<{ expanded: boolean }>`
-  height: ${(props) => (props.expanded ? '100%' : '0px')};
-  overflow: hidden;
-`
 
 const StyledLinkExternal = styled(LinkExternal)`
   text-decoration: none;
@@ -206,9 +170,9 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
 
   const { quoteTokenAdresses, quoteTokenSymbol, tokenAddresses, risk } = farm
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
-  console.log(farm.multiplier)
+
   return (
-    <FCardContainer>
+    <FCardContainer >
       <StyledDetailsCard>
         {farm.tokenSymbol === 'KUP' && <StyledCardAccent />}
         <CardHeading
@@ -218,6 +182,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
           depositFee={farm.depositFeeBP}
           farmImage={farmImage}
           tokenSymbol={farm.tokenSymbol}
+          isTokenOnly={farm.isTokenOnly}
         />
         {!removed && (
           <Flex justifyContent="space-between" alignItems="center" style={{ width: '100%', padding: '0 10px' }}>

@@ -10,9 +10,6 @@ import DocsMenu from './DocsMenu'
 import MobileMenu from './MobileMenu'
 // import MetamaskMenu from './MetamaskMenu'
 
-import LANDING from '../../../public/images/common/landing-bg-shady.png'
-// import FARMS from '../../../public/images/common/landing-bg-shady.png'
-
 const MenuContainer = styled.div`
   justify-content: space-between;
   align-items: center;
@@ -151,7 +148,9 @@ export default function Menu() {
   const setPathName = () => {
     const shortname = location.pathname.substring(0, 6)
 
-    return shortname === '/farms' ? '/images/common/farms-bg-shady.png' : '/images/common/landing-bg-shady.png'
+    return shortname === '/farms' || shortname === '/pools'
+      ? '/images/common/farms-bg-shady.png'
+      : '/images/common/landing-bg-shady.png'
   }
   return (
     <>
@@ -183,7 +182,9 @@ export default function Menu() {
             $00,00
           </RobotoButton>
         </Flex> */}
-        <WebContainer>{/* <UIMenu /> */}</WebContainer>
+        <WebContainer>
+          <UIMenu />
+        </WebContainer>
       </MenuContainer>
     </>
   )

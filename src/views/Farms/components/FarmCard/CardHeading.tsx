@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Tag, Flex, Heading, Image } from '@pancakeswap-libs/uikit'
-import { CommunityTag, CoreTag, NoFeeTag, RiskTag } from 'components/Tags'
+import { NoFeeTag } from 'components/Tags'
 
 export interface ExpandableSectionProps {
   lpLabel?: string
@@ -10,6 +10,7 @@ export interface ExpandableSectionProps {
   depositFee?: number
   farmImage?: string
   tokenSymbol?: string
+  isTokenOnly?: boolean
 }
 
 const Wrapper = styled(Flex)`
@@ -26,17 +27,6 @@ const Relative = styled.div`
 
 const MultiplierTag = styled(Tag)`
   margin-left: 4px;
-`
-const Blur = styled.div`
-  height: 70px;
-  width: 70px;
-  background-color: transparent;
-  box-shadow: 0 0 30px #000;
-  position: absolute;
-  border-radius: 100px;
-  left: 33px;
-  top: 28px;
-  z-index: 1;
 `
 
 const StyledImg = styled(Image)`
@@ -58,6 +48,30 @@ const StyledNoFeeTag = styled(NoFeeTag)`
     color: #ff629a !important;
   }
 `
+const BoxShadowBlock = styled.div`
+  z-index: 6;
+  position: absolute;
+  left: 67px;
+  top: 17px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50px;
+  background-color: transparent;
+  box-shadow: 6px 0px 7px 0px #323232;
+`
+
+const TokenImg = styled.img`
+  max-height: 75px;
+  margin-bottom: 20px;
+`
+const TokenLeft = styled(TokenImg)`
+  margin-right: -8px;
+  z-index: 7;
+`
+const TokenRight = styled(TokenImg)`
+  margin-left: -8px;
+  z-index: 5;
+`
 
 const CardHeading: React.FC<ExpandableSectionProps> = ({
   lpLabel,
@@ -66,11 +80,26 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
   farmImage,
   tokenSymbol,
   depositFee,
+  isTokenOnly,
 }) => {
+  const getSplitToken = () => {
+    return lpLabel.split(' ')[0].split('-')
+  }
+
   return (
     <Relative>
       <Wrapper justifyContent="space-between" alignItems="center" mb="15px" mt="15px">
-        <StyledImg src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={92} height={92} mb={10} />
+        {!isTokenOnly ? (
+          <Flex justifyContent="center">
+            <>
+              <BoxShadowBlock />
+              <TokenLeft src={`/images/farms/${getSplitToken()[0]}.png`} alt={getSplitToken()[0]} />
+            </>
+            <TokenRight src={`/images/farms/${getSplitToken()[1]}.png`} alt={getSplitToken()[1]} />
+          </Flex>
+        ) : (
+          <StyledImg src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={92} height={92} mb={10} />
+        )}
         {/* <Blur /> */}
         <FullFlex flexDirection="column" alignItems="center">
           <Heading mb="10px">{lpLabel}</Heading>

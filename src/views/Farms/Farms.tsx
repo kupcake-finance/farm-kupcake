@@ -27,6 +27,26 @@ const StyledFlexLayout = styled(FlexLayout)`
   margin: 0 auto;
 `
 
+const StyledHeading = styled(Heading)`
+display: flex;
+justify-content: center;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: #48cae4;
+  font-size: 65px;
+  font-weight: 800;
+
+  & > div {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin: 0 8px;
+    font-weight: 500;
+    color: #000;
+  }
+  & > span {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #ff629a;
+  }
+`
+
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const { path } = useRouteMatch()
   const TranslateString = useI18n()
@@ -101,15 +121,30 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
     [bnbPrice, account, cakePrice, ethereum],
   )
 
+  const getSubTitle = () => {
+    const shortname = window.location.pathname.substring(0, 6)
+
+    return shortname === '/farms'
+      ? ' Withdraw your LPs at any time'
+      : ' Withdraw your tokens at any time'
+  }
+
   return (
     <Page>
-      <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-        {tokenMode
-          ? TranslateString(10002, 'Stake tokens to earn EGG')
-          : TranslateString(320, 'Stake LP tokens to earn EGG')}
-      </Heading>
+      <StyledHeading
+        as="h1"
+        size="lg"
+        color="primary"
+        mb="20px"
+        pt="100px"
+        style={{ textAlign: 'center', fontSize: '60px' }}
+      >
+        <span>STAKE </span> <div>&</div> EARN
+      </StyledHeading>
       <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback EGG')}
+        No Deposit Fee. 
+        {getSubTitle()}
+        
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
@@ -123,7 +158,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </StyledFlexLayout>
       </div>
-      <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive />
+      <Divider />
     </Page>
   )
 }
