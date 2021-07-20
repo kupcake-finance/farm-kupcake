@@ -50,7 +50,7 @@
   },
   {
     "inputs": [],
-    "name": "WKCS",
+    "name": "WBNB",
     "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
     "stateMutability": "view",
     "type": "function"

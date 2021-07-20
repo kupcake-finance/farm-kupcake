@@ -54,7 +54,6 @@ export const fetchFarmUserStakedBalances = async (account: string) => {
   const parsedStakedBalances = rawStakedBalances.map((stakedBalance) => {
     return new BigNumber(stakedBalance[0]._hex).toJSON()
   })
-
   return parsedStakedBalances
 }
 
@@ -74,22 +73,4 @@ export const fetchFarmUserEarnings = async (account: string) => {
     return new BigNumber(earnings).toJSON()
   })
   return parsedEarnings
-}
-
-export const fetchFarmUserCanHarvest = async (account: string) => {
-  const masterChefAdress = getMasterChefAddress()
-
-  const calls = farmsConfig.map((farm) => {
-    return {
-      address: masterChefAdress,
-      name: 'canHarvest',
-      params: [farm.pid, account],
-    }
-  })
-
-  const harvest = await multicall(masterchefABI, calls)
-  const parsedCanHarvest = harvest.map(() => {
-    return parsedCanHarvest.toJSON()
-  })
-  return parsedCanHarvest
 }

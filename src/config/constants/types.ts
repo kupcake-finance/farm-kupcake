@@ -20,24 +20,25 @@ export interface Ifo {
 }
 
 export enum QuoteToken {
-  'KCS' = 'KCS',
+  'BNB' = 'BNB',
   'CAKE' = 'CAKE',
   'SYRUP' = 'SYRUP',
   'BUSD' = 'BUSD',
   'TWT' = 'TWT',
   'UST' = 'UST',
-  'BNB' = 'BNB',
 }
 
 export enum PoolCategory {
   'COMMUNITY' = 'Community',
   'CORE' = 'Core',
-  'BINANCE' = 'Binance', // Pools using egg KCS behave differently than pools using a token
+  'BINANCE' = 'Binance', // Pools using native BNB behave differently than pools using a token
 }
 
 export interface Address {
   97?: string
   56: string
+  321: string
+  322: string
 }
 
 export interface FarmConfig {

@@ -1,34 +1,44 @@
 export default {
   cake: {
-    56: '0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6',
+    56: '',
     97: '',
+    321: '',
+    322: '0xaD323D0595Fc635f49499E62637E0aCe460B4067',
   },
   masterChef: {
-    56: '0xe70E9185F5ea7Ba3C5d63705784D8563017f2E57',
+    56: '',
     97: '',
+    321: '',
+    322: '0x2248784B8cdd3B2D12516A124550f532a80e561E',
   },
   wbnb: {
-    56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    56: '',
     97: '',
+    321: '',
+    322: '0x5512Ae5E7eE55869dA7dc2a5D2F74a5Df65683B8',
   },
   lottery: {
     56: '',
     97: '',
+    321: '',
+    322: '',
   },
   lotteryNFT: {
-    56: '0xf655f8Bb8Fb8aD58CaCb7cA1eCd6A8582e63C291',
+    56: '',
     97: '',
+    321: '',
+    322: '',
   },
   mulltiCall: {
     56: '0x1ee38d535d541c55c9dae27b12edf090c608e6fb',
     97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
+    321: '',
+    322: '0xc5923b319ea4D0F76639e63db91cFF9F2550fd89',
   },
   busd: {
-    56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-    97: '',
-  },
-  referral: {
     56: '',
     97: '',
+    321: '',
+    322: '0x67f6a7BbE0da067A747C6b2bEdF8aBBF7D6f60dc',
   },
 }

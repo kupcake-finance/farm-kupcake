@@ -7,7 +7,6 @@ import { useFetchPublicData } from 'state/hooks'
 import GlobalStyle from './style/Global'
 import Menu from './components/NewMenu/Menu'
 import PageLoader from './components/PageLoader'
-import NftGlobalNotification from './views/Nft/components/NftGlobalNotification'
 // import FarmDetails from 'views/FarmDetails'
 
 // Route-based code splitting
@@ -20,7 +19,6 @@ const FarmsDetails = lazy(() => import('./views/FarmDetails'))
 const Swap = lazy(() => import('./views/Swap/Swap'))
 const Chart = lazy(() => import('./views/Chart/Chart'))
 const NotFound = lazy(() => import('./views/NotFound'))
-const Referral = lazy(() => import('./views/Ref/Referral'))
 const Landing = lazy(() => import('./views/Landing/Landing'))
 // const Nft = lazy(() => import('./views/Nft'))
 
@@ -52,9 +50,9 @@ const App: React.FC = () => {
           <Route path="/" exact>
             <Landing />
           </Route>
-          {/* <Route path="/farms">
+          <Route path="/farms">
             <Farms />
-          </Route> */}
+          </Route>
           {/* <Route path="/pools">
             <Farms tokenMode />
           </Route> */}
@@ -100,7 +98,6 @@ const App: React.FC = () => {
         </Switch>
       </Suspense>
       {/* </Menu> */}
-      <NftGlobalNotification />
     </Router>
   )
 }

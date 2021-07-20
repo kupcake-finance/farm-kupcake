@@ -36,6 +36,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
   const { tokenMode } = farmsProps
 
+  const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
+  console.log(CHAIN_ID)
+  
   const dispatch = useDispatch()
   const { fastRefresh } = useRefresh()
   useEffect(() => {
@@ -82,6 +85,8 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
         return { ...farm, apy }
       })
+
+
       return farmsToDisplayWithAPY.map((farm) => (
         <FarmCard
           key={farm.pid}
