@@ -6,7 +6,7 @@ import { Farm } from 'state/types'
 import { provider } from 'web3-core'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import useI18n from 'hooks/useI18n'
-import { QuoteToken } from 'config/constants/types' 
+import { QuoteToken } from 'config/constants/types'
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
@@ -103,8 +103,6 @@ const FCardContainer = styled.div`
   border-radius: 30px;
 `
 
-
-
 const StyledLinkExternal = styled(LinkExternal)`
   text-decoration: none;
   font-weight: 600;
@@ -172,7 +170,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
 
   return (
-    <FCardContainer >
+    <FCardContainer>
       <StyledDetailsCard>
         {farm.tokenSymbol === 'KUP' && <StyledCardAccent />}
         <CardHeading

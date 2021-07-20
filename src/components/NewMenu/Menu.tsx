@@ -8,6 +8,8 @@ import UIMenu from '../Menu'
 import CustomizedMenus from './CustomizedMenus'
 import DocsMenu from './DocsMenu'
 import MobileMenu from './MobileMenu'
+import YieldMenu from './YieldMenu'
+import DexMenu from './DexMenu'
 // import MetamaskMenu from './MetamaskMenu'
 
 const MenuContainer = styled.div`
@@ -68,6 +70,12 @@ const StyledA = styled.a`
 
   & > img {
     max-height: 24px;
+  }
+
+
+
+  &:hover{
+    color: #ff629a !important;
   }
 `
 
@@ -165,13 +173,18 @@ export default function Menu() {
           </a>
         </>
         <LinksContainer>
-          <StyledA href="/">
-            Presale<span>(soon)</span>
+          <StyledA href="https://kupcakeswap.finance">
+            Home
           </StyledA>
-          <StyledA href="/swap">Swap</StyledA>
-          <StyledA href="/liquidity">Liquidity</StyledA>
-          <StyledA href="/farms">Farms</StyledA>
-          <StyledA href="/pools">Pools</StyledA>
+          <StyledA href="https://presale.kupcakeswap.finance">
+            Presale
+          </StyledA>
+          {/* <StyledA href="/swap">Swap</StyledA> */}
+          {/* <StyledA href="/liquidity">Liquidity</StyledA> */}
+          {/* <StyledA href="/farms">Farms</StyledA> */}
+          {/* <StyledA href="/pools">Pools</StyledA> */}
+          <DexMenu />
+          <YieldMenu />
           <DocsMenu />
           <CustomizedMenus />
         </LinksContainer>

@@ -16,7 +16,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
+import HomeIcon from '@material-ui/icons/Home'
 import MailIcon from '@material-ui/icons/Mail'
 import UIMenu from '../Menu'
 
@@ -95,6 +95,22 @@ const LogoBanner = styled.img`
 `
 const Button = styled.button``
 
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    flex-direction: column;
+
+    & > *, & > * > button {
+      width: 170px !important;
+      height: 40px;
+      font-size: 17px;
+      font-weight: 600;
+      margin: 5px auto;
+    }
+  }
+`
 export default function PersistentDrawerLeft() {
   const classes = useStyles()
   const theme = useTheme()
@@ -147,14 +163,28 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          <ListItem button key="Presale">
-            <a href="https://presale.kupcakeswap.finance">
-              <ListItemText primary="Presale  (soon)" />
+          <ListItem button key="Home">
+            <a href="https://kupcakeswap.finance">
+              <ListItemText primary="Home" />
             </a>
           </ListItem>
-          {/* <ListItem button key="Dapp (soon)">
-            <ListItemText primary="Dapp (soon)" />
-          </ListItem> */}
+          <ListItem button key="Presale">
+            <a href="https://presale.kupcakeswap.finance">
+              <ListItemText primary="Presale" />
+            </a>
+          </ListItem>
+          <Divider />
+          <ListItem button key="Swap">
+            <a href="https://dex.kupcakeswap.finance/#/swap">
+              <ListItemText primary="Swap" />
+            </a>
+          </ListItem>
+          <ListItem button key="Liquidity">
+            <a href="https://dex.kupcakeswap.finance/#/pool">
+              <ListItemText primary="Liquidity" />
+            </a>
+          </ListItem>
+          <Divider />
           <ListItem button key="Documentation">
             <a href="https://docs.kupcakeswap.finance">
               <ListItemText primary="Documentation" />
@@ -188,9 +218,9 @@ export default function PersistentDrawerLeft() {
             </a>
           </ListItem>
           <Divider style={{ marginBottom: '20px' }} />
-          {/* <ListItem>
+          <Flex>
             <UIMenu />
-          </ListItem> */}
+          </Flex>
         </List>
       </Drawer>
     </div>

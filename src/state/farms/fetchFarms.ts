@@ -68,14 +68,11 @@ const fetchFarms = async () => {
           tokenPriceVsQuote = new BigNumber(quoteTokenBlanceLP).div(new BigNumber(tokenBalanceLP))
         }
         lpTotalInQuoteToken = tokenAmount.times(tokenPriceVsQuote)
-
       } else {
         // Ratio in % a LP tokens that are in staking, vs the total number in circulation
         const lpTokenRatio = new BigNumber(lpTokenBalanceMC).div(new BigNumber(lpTotalSupply))
         const A = new BigNumber(lpTokenBalanceMC)
         const B = new BigNumber(lpTotalSupply)
-       
-
 
         // Total value in staking in quote token value
         lpTotalInQuoteToken = new BigNumber(quoteTokenBlanceLP)
@@ -84,7 +81,9 @@ const fetchFarms = async () => {
           .times(lpTokenRatio)
 
         // Amount of token in the LP that are considered staking (i.e amount of token * lp ratio)
-        tokenAmount = new BigNumber(tokenBalanceLP).div(new BigNumber(10).pow(tokenDecimals)).times(lpTokenRatio.toNumber())
+        tokenAmount = new BigNumber(tokenBalanceLP)
+          .div(new BigNumber(10).pow(tokenDecimals))
+          .times(lpTokenRatio.toNumber())
         const quoteTokenAmount = new BigNumber(quoteTokenBlanceLP)
           .div(new BigNumber(10).pow(quoteTokenDecimals))
           .times(lpTokenRatio)
@@ -111,7 +110,6 @@ const fetchFarms = async () => {
           name: 'kupPerBlock',
         },
       ])
-
 
       const allocPoint = new BigNumber(info.allocPoint._hex)
       const poolWeight = allocPoint.div(new BigNumber(totalAllocPoint))

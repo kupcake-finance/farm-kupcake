@@ -56,7 +56,6 @@ export const Metamask = ({ children }) => {
   const onMetamaskCard = async () => {
     try {
       const token = await registerToken('0x98899133e0dbc6797925391b8125bc9001c261a4', 'KUP', 18, '#')
-
     } catch (err) {
       console.error(err)
     }
