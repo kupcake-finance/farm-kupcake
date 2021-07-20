@@ -13,7 +13,7 @@ import PageLoader from './components/PageLoader'
 // Only pool is included in the main bundle because of it's the most visited page'
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
-const FarmsDetails = lazy(() => import('./views/FarmDetails')) 
+const FarmsDetails = lazy(() => import('./views/FarmDetails'))
 // const Lottery = lazy(() => import('./views/Lottery'))
 // const Pools = lazy(() => import('./views/Pools'))
 const Swap = lazy(() => import('./views/Swap/Swap'))

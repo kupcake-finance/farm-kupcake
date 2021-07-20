@@ -19,7 +19,7 @@ const StyledButton = styled(Button)`
   font-weight: 600;
   max-width: 300px;
   box-shadow: none;
-  transition: all 0.2s ease-in-out; 
+  transition: all 0.2s ease-in-out;
   border: 2px solid #fff !important;
 
   & > svg,
@@ -52,14 +52,13 @@ const StyledButtonRed = styled(StyledButton)`
 
   &:hover {
     border: 2px solid #ff629a !important;
-    color:  #ff629a !important;
+    color: #ff629a !important;
 
     & > svg,
     & > svg > * {
       fill: #ff629a;
     }
   }
-
 `
 const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelectMax, value, depositFeeBP = 0 }) => {
   const TranslateString = useI18n()

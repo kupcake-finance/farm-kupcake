@@ -187,7 +187,7 @@ export default function PersistentDrawerLeft() {
               <ListItemText primary="Twitter" />
             </a>
           </ListItem>
-          <Divider style={{marginBottom:'20px'}}/>
+          <Divider style={{ marginBottom: '20px' }} />
           {/* <ListItem>
             <UIMenu />
           </ListItem> */}

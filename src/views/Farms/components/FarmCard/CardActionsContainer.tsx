@@ -122,7 +122,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
 
         <HarvestAction earnings={earnings} pid={pid} />
 
-        <Flex mb='-10px' mt='10px'>
+        <Flex mb="-10px" mt="10px">
           <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="3px">
             {lpName}
           </Text>

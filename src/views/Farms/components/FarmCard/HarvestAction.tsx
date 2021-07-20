@@ -63,15 +63,17 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const displayBalance = rawEarningsBalance.toLocaleString()
 
   return (
-    <Flex mb='8px' justifyContent='space-between' alignItems='center' flexDirection="column">
-      <Heading mb='8px' color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>{displayBalance}</Heading>
+    <Flex mb="8px" justifyContent="space-between" alignItems="center" flexDirection="column">
+      <Heading mb="8px" color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>
+        {displayBalance}
+      </Heading>
       <BalanceAndCompound>
-        {pid === 12 ?
+        {pid === 12 ? (
           <StyledButton
             disabled={rawEarningsBalance === 0 || pendingTx}
-            size='sm'
-            variant='secondary'
-            marginBottom='15px'
+            size="sm"
+            variant="secondary"
+            marginBottom="15px"
             onClick={async () => {
               setPendingTx(true)
               await onStake(rawEarningsBalance.toString())
@@ -80,7 +82,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
           >
             {TranslateString(999, 'Compound')}
           </StyledButton>
-          : null}
+        ) : null}
         <StyledButton
           disabled={rawEarningsBalance === 0 || pendingTx}
           onClick={async () => {

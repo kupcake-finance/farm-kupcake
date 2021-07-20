@@ -21,26 +21,26 @@ const Wrapper = styled(Flex)`
 
 const Relative = styled.div`
   position: relative;
-  width:100%;
+  width: 100%;
 `
 
 const MultiplierTag = styled(Tag)`
   margin-left: 4px;
 `
 const Blur = styled.div`
-      height: 70px;
-    width: 70px;
-    background-color: transparent;
-    box-shadow: 0 0 30px #000;
-    position: absolute;
-    border-radius: 100px;
-    left: 33px;
-    top: 28px;
-    z-index: 1;
+  height: 70px;
+  width: 70px;
+  background-color: transparent;
+  box-shadow: 0 0 30px #000;
+  position: absolute;
+  border-radius: 100px;
+  left: 33px;
+  top: 28px;
+  z-index: 1;
 `
 
 const StyledImg = styled(Image)`
-  z-index:2;
+  z-index: 2;
 `
 
 const FullFlex = styled(Flex)`
@@ -51,9 +51,11 @@ const FullFlex = styled(Flex)`
 const StyledNoFeeTag = styled(NoFeeTag)`
   color: #ff629a !important;
 
-  & > svg, & > svg > *, & > * > svg{
+  & > svg,
+  & > svg > *,
+  & > * > svg {
     fill: #ff629a !important;
-  color: #ff629a !important;
+    color: #ff629a !important;
   }
 `
 
@@ -67,19 +69,19 @@ const CardHeading: React.FC<ExpandableSectionProps> = ({
 }) => {
   return (
     <Relative>
-    <Wrapper justifyContent="space-between" alignItems="center" mb="15px" mt="15px">
-      <StyledImg src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={92} height={92} mb={10}/>
+      <Wrapper justifyContent="space-between" alignItems="center" mb="15px" mt="15px">
+        <StyledImg src={`/images/farms/${farmImage}.png`} alt={tokenSymbol} width={92} height={92} mb={10} />
         {/* <Blur /> */}
-      <FullFlex flexDirection="column" alignItems="center">
-        <Heading mb="10px">{lpLabel}</Heading>
-        <FullFlex justifyContent="space-between" mt={20}>
-          <StyledNoFeeTag />
-          {/* {isCommunityFarm ? <CommunityTag /> : <CoreTag />} */}
-          {/* <RiskTag risk={risk} /> */}
-          <MultiplierTag variant="secondary">{multiplier}</MultiplierTag>
+        <FullFlex flexDirection="column" alignItems="center">
+          <Heading mb="10px">{lpLabel}</Heading>
+          <FullFlex justifyContent="space-between" mt={20}>
+            <StyledNoFeeTag />
+            {/* {isCommunityFarm ? <CommunityTag /> : <CoreTag />} */}
+            {/* <RiskTag risk={risk} /> */}
+            <MultiplierTag variant="secondary">{multiplier}</MultiplierTag>
+          </FullFlex>
         </FullFlex>
-      </FullFlex>
-    </Wrapper>
+      </Wrapper>
     </Relative>
   )
 }

@@ -203,7 +203,10 @@ export default function InfoContainerBlock() {
           renderer={(props) => (
             <TimerContainer>
               <TimeElement>
-                <TimeValue> <PinkSpan>COMING</PinkSpan>SOON</TimeValue>
+                <TimeValue>
+                  {' '}
+                  <PinkSpan>COMING</PinkSpan>SOON
+                </TimeValue>
                 {/* <TimeValue>{zeroPad(props.days)}</TimeValue> */}
                 <TimeLabel>Follow our social medias for live updates</TimeLabel>
               </TimeElement>

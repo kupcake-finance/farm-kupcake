@@ -220,8 +220,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
           tokenSymbol={farm.tokenSymbol}
         />
         {!removed && (
-          <Flex justifyContent="space-between" alignItems="center" style={{width:'100%', padding:'0 10px'}}>
-            <Text style={{ color:"#48cae4", fontWeight:600, display: 'flex', alignItems: 'center' }}>
+          <Flex justifyContent="space-between" alignItems="center" style={{ width: '100%', padding: '0 10px' }}>
+            <Text style={{ color: '#48cae4', fontWeight: 600, display: 'flex', alignItems: 'center' }}>
               {TranslateString(352, 'APR')}
               {farm.apy ? (
                 <>
@@ -243,19 +243,23 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
             </Text>
           </Flex>
         )}
-        <Flex justifyContent="space-between" style={{width:'100%', padding:'0 10px'}}>
-          <Text style={{ color:"#48cae4", fontWeight:600, display: 'flex', alignItems: 'center' }}>{TranslateString(318, 'Earn')}:</Text>
+        <Flex justifyContent="space-between" style={{ width: '100%', padding: '0 10px' }}>
+          <Text style={{ color: '#48cae4', fontWeight: 600, display: 'flex', alignItems: 'center' }}>
+            {TranslateString(318, 'Earn')}:
+          </Text>
           <Text bold>{earnLabel}</Text>
         </Flex>
 
         <Container>
-            <InfoBanner>
-              <CardActionsContainer farm={farm} ethereum={ethereum} account={account} />
-            </InfoBanner>
+          <InfoBanner>
+            <CardActionsContainer farm={farm} ethereum={ethereum} account={account} />
+          </InfoBanner>
         </Container>
 
-        <Flex justifyContent="space-between" style={{width:'100%', padding:'0 10px'}}>
-          <Text style={{ color:"#48cae4", fontWeight:600, display: 'flex', alignItems: 'center' }}>{TranslateString(99999, 'Deposit')}:</Text>
+        <Flex justifyContent="space-between" style={{ width: '100%', padding: '0 10px' }}>
+          <Text style={{ color: '#48cae4', fontWeight: 600, display: 'flex', alignItems: 'center' }}>
+            {TranslateString(99999, 'Deposit')}:
+          </Text>
 
           <StyledLinkExternal
             style={{ display: 'flex', alignItems: 'center' }}
@@ -268,8 +272,10 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
             {lpLabel}
           </StyledLinkExternal>
         </Flex>
-        <Flex justifyContent="space-between" style={{width:'100%', padding:'0 10px'}}>
-          <Text style={{ color:"#48cae4", fontWeight:600, display: 'flex', alignItems: 'center' }}>{TranslateString(90000, 'Liquidity in Pool')}:</Text>
+        <Flex justifyContent="space-between" style={{ width: '100%', padding: '0 10px' }}>
+          <Text style={{ color: '#48cae4', fontWeight: 600, display: 'flex', alignItems: 'center' }}>
+            {TranslateString(90000, 'Liquidity in Pool')}:
+          </Text>
           <Text bold>{totalValueFormated}</Text>
         </Flex>
         <Flex justifyContent="flex-start">

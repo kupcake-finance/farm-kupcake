@@ -476,11 +476,7 @@ const DepositButton = styled(SwitchButton)``
 const WithdrawButton = styled(SwitchButton)``
 const WithdrawExitButton = styled(SwitchButton)``
 
-
-
 const FarmDetails: React.FC = () => {
-
-
   return (
     <Container>
       <StyledDetailsCard>
@@ -504,8 +500,8 @@ const FarmDetails: React.FC = () => {
         <InfoBanner>
           <BannerTitle>Get token tokens first</BannerTitle>
           <BannerSubText>
-            token tokens are required. Once you&apos;ve added liquidity to the KupcakeSwap token{' '}
-            pool you can deposit your liquidity tokens on this page.
+            token tokens are required. Once you&apos;ve added liquidity to the KupcakeSwap token pool you can deposit
+            your liquidity tokens on this page.
           </BannerSubText>
           <BannerButton>
             {/* Make the button wording different depending on Token or LP */}
