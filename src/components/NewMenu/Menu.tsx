@@ -40,6 +40,35 @@ const MenuContainer = styled.div`
   }
 `
 
+const AlertContainer = styled.div`
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 65px;
+  background: #fe2222;
+  flex-direction: column;
+  box-shadow: 0 0 10px #3c3c3c;
+  margin-top: 65px;
+
+  ${({ theme }) => theme.mediaQueries.xs} {
+    /* display: none; */
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: flex;
+    position: fixed;
+    z-index: 9;
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    display: flex;
+    position: fixed;
+    z-index: 9;
+  }
+
+  & > a > img {
+    max-height: 54px;
+  }
+`
+
 const MobileMenuContainer = styled.div`
   ${({ theme }) => theme.mediaQueries.xs} {
     display: flex;
@@ -72,9 +101,7 @@ const StyledA = styled.a`
     max-height: 24px;
   }
 
-
-
-  &:hover{
+  &:hover {
     color: #ff629a !important;
   }
 `
@@ -150,6 +177,21 @@ const Background = styled.div`
 
 const WebContainer = styled.div``
 
+const AlertText = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  font-size: 25px;
+  color: #fff;
+
+  & > span {
+    font-size: 13px;
+  }
+`
+
 export default function Menu() {
   const location = useLocation()
 
@@ -173,12 +215,8 @@ export default function Menu() {
           </a>
         </>
         <LinksContainer>
-          <StyledA href="https://kupcakeswap.finance">
-            Home
-          </StyledA>
-          <StyledA href="https://presale.kupcakeswap.finance">
-            Presale
-          </StyledA>
+          <StyledA href="https://kupcakeswap.finance">Home</StyledA>
+          <StyledA href="https://presale.kupcakeswap.finance">Presale</StyledA>
           {/* <StyledA href="/swap">Swap</StyledA> */}
           {/* <StyledA href="/liquidity">Liquidity</StyledA> */}
           {/* <StyledA href="/farms">Farms</StyledA> */}
@@ -199,6 +237,12 @@ export default function Menu() {
           <UIMenu />
         </WebContainer>
       </MenuContainer>
+      <AlertContainer>
+        <AlertText>
+          ⚠️ Beta Release on KCC Testnet ⚠️
+          <span>Connect to Testnet to try Kupcakeswap out.</span>
+        </AlertText>
+      </AlertContainer>
     </>
   )
 }
